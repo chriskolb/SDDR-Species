@@ -18,7 +18,7 @@ convert RasterLayer/RasterBrick object to a data frame and vice versa.
 
 # single-species-models
 
-This folder contains the necessary code for the single-species SDDR models as well as the comparison benchmarks. The included folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the output of the scripts below.
+This folder contains the necessary code for the single-species SDDR models as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the output of the scripts below.
 
 - **`bayes-hopt-single.R`**
 This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times to produce the final performance results. (runs for quite some days!)
@@ -37,7 +37,7 @@ This script produces the predictive maps obtained by SDDR (DNN-only predictor ty
 
 # pooled-models 
 
-This folder contains the necessary code for the pooled SDDR models. The included folders contain the necessary `deepregression` repo, the pooled data set, Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
+This folder contains the necessary code for the pooled SDDR models. Nested folders contain the necessary `deepregression` repo, the pooled data set, Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
 - **`bayes-hopt-pooled.R`**
 This script performs Bayesian Hyperparameter Optimization for all three predictor types. Subsequently, the models are estimated ten times to produce the final results. The folder "bayesian-optimization-results" contains the resulting `ParBayesianOptimization` objects and "performance-results" the respective AUC and Brier scores. Also runs for several days.
@@ -47,7 +47,7 @@ This script takes the raw data (**not included here**) and produces the pooled a
 
 # multi-species-models
 
-This folder contains the necessary code for the multi-species SDDR approaches. The included folders contain the necessary `deepregression` repo, the multivariate data set, pre-computed bayesian optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
+This folder contains the necessary code for the multi-species SDDR approaches. Nested folders contain the necessary `deepregression` repo, the multivariate data set, pre-computed bayesian optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
 - **`bayes-hopt-multi-class.R`** 
 This script performs Bayesian Hyperparameter Optimization for all three predictor types in the multi-class modeling approach using a Multinoulli distribution to model the label powerset of the response labels. Subsequently, the models are estimated ten times to produce the final results. The folder "multi-class-model" contains the resulting `ParBayesianOptimization` objects and performance results, i.e. the respective AUC and Brier scores. Also runs for several days.
