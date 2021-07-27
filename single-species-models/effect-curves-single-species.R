@@ -466,6 +466,37 @@ timestamp <- format(Sys.time(), "%Y-%m-%d-%H%M")
       
       ### partial effect curves
       gam.curves <- plot(mod.gam)
+        print(paste0("Press button to continue")) # need to do this as a quick fix
+        print(paste0("Press button to continue")) # because each line of code is one key stroke
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+        print(paste0("Press button to continue"))
+
       dev.off()
       
       # exemplary plot for rainfall variable
