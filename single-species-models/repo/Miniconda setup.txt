@@ -1,0 +1,5 @@
+For single species models with deepregression version 16.06.2020
+
+- conda create --name r-reticulate
+- conda install python=3.7.10
+- pip install tensorflow==2.0.0 tensorflow-probability==0.8.0
