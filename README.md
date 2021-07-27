@@ -23,7 +23,7 @@ This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and M
 This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder `plot-results`.
 
 - **`performance-results-single-species.R`**
-This script takes the pre-computed `ParBayesianOptimization` objects from the folder ``bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
+This script takes the pre-computed `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
 
 - **`plots-single-species.R`**
 This script produces the predictive maps obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here.
