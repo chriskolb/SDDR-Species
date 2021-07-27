@@ -14,7 +14,7 @@ Overview of project files and folders:
 This folder contains the necessary code for the single-species SDDR models as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the output of the scripts below.
 
 - **`performance-results-single-species.R`**
-This script takes the pre-computed `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
+This script takes the pre-computed optimal hyperparameters in the `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
 
 - **`benchmarks-single.R`**
 This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt).
@@ -27,7 +27,7 @@ This script produces the partial effect curves of the optimized models for the s
 This script produces the predictive maps obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here.
 
 - **`bayes-hopt-single.R`**
-This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results (runs for 7+ days!). Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. Results will thus differ. To re-run the AUC and Brier score results with the pre-computed `ParBayesianOptimization` objects (same as results in thesis), use **`effect-curves-single-species.R`**.
+This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results (runs for 7+ days!). Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. Results will thus differ. To re-run the thesis AUC and Brier score results with pre-computed `ParBayesianOptimization` objects (same as results in thesis), use **`effect-curves-single-species.R`**.
 
 ## pooled-models 
 
