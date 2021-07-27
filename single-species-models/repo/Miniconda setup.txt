@@ -1,4 +1,6 @@
-I used the R package reticulate to install Miniconda using reticulate::install_miniconda() in the R console. This automatically creates a conda env called r-reticulate. Then I opened Anaconda prompt on Windows PC and re-created the environment using the correct Python, Tensorflow and Tensorflow Probability versions.
+I used the R package reticulate to install Miniconda using reticulate::install_miniconda() in the R console. 
+This automatically creates a conda env called r-reticulate. 
+Then I opened Anaconda prompt on Windows PC and re-created the environment using the correct dependencies.
 
 - conda env remove --name r-reticulate
 - conda create --name r-reticulate
