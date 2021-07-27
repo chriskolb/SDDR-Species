@@ -21,13 +21,13 @@ Overview of project files and folders:
 This folder contains the necessary code for the single-species SDDR models as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the output of the scripts below.
 
 - **`bayes-hopt-single.R`**
-This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times to produce the final performance results. (runs for quite some days!)
+This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times to produce the final performance results (runs for quite some days!).
 
 - **`benchmarks-single.R`**
-This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt)
+This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt).
 
 - **`effect-curves-single-species.R`**
-This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder plot-results
+This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder `plot-results`.
 
 - **`performance-results-single-species.R`**
 This script takes the pre-computed `ParBayesianOptimization` objects from the folder bayesian-optimization and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder performance-results.
@@ -50,13 +50,13 @@ This script takes the raw data (**not included here**) and produces the pooled a
 This folder contains the necessary code for the multi-species SDDR approaches. Nested folders contain the necessary `deepregression` repo, the multivariate data set, pre-computed bayesian optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
 - **`bayes-hopt-multi-class.R`** 
-This script performs Bayesian Hyperparameter Optimization for all three predictor types in the multi-class modeling approach using a Multinoulli distribution to model the label powerset of the response labels. Subsequently, the models are estimated ten times to produce the final results. The folder "multi-class-model" contains the resulting `ParBayesianOptimization` objects and performance results, i.e. the respective AUC and Brier scores. Also runs for several days.
+This script performs Bayesian Hyperparameter Optimization for all three predictor types in the multi-class modeling approach using a Multinoulli distribution to model the label powerset of the response labels. Subsequently, the models are estimated ten times to produce the final results. The folder `multi-class-model` contains the resulting `ParBayesianOptimization` objects and performance results, i.e. the respective AUC and Brier scores. Also runs for several days.
 
 - **`bayes-hopt-multivariate.R`** 
-Same as for `bayes-hopt-multi-class`, only that the multivariate data are modeled using seven independent Bernoulli distributions. Results are contained in "multivariate-model"
+Same as for `bayes-hopt-multi-class`, only that the multivariate data are modeled using seven independent Bernoulli distributions. Results are contained in `multivariate-model`
 
 - **`multi-mars.R`**
-This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder "mmars-model"
+This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `mmars-model`.
 
 
 
