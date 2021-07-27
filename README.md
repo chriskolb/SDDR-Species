@@ -1,7 +1,7 @@
 # Species Distribution Modeling of vector species for <em>American Trypanosomiasis</em> using Semi-Structured Deep Distributional Regression
 Species Distribution Modeling of Disease Vector Species using Semi-Structured Deep Distributional Regression
 
-**Disclaimer 1**: The analysis requires the package **`deepregression`**, which is supplied in the folders "repo". Note that this package requires **`python`**, **`tensorflow`** and **`tensorflow_probability`** 
+**Disclaimer 1**: The analysis requires the package **`deepregression`**, which is supplied in the folders "repo". Note that this package requires **`python`**, **`tensorflow`** and **`tensorflow_probability`** and other **`R`** dependencies. See the README files in the "deepregression-master" folder within "repo". Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models.
 
 **Disclaimer 2**: The analysis is not entirely reproducible as it relies on some confidential data and packages that could not be made public.
 
@@ -23,20 +23,33 @@ convert RasterLayer/RasterBrick object to a data frame and vice versa.
 This folder contains the necessary code for the single-species SDDR models as well as the comparison benchmarks. The included folders contain the necessary `deepregression` repo, the single-species data sets, the Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas and the output of the scripts below.
 
 - **`bayes-hopt-single.R`**
-This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times to produce the final performance results (runs for quite some days!)
+This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times to produce the final performance results. (runs for quite some days!)
 
 - **`benchmarks-single.R`**
-This script produces the univariate benchmark results (**`mgcv`** GAM, XGBoost and MaxEnt)
+This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt)
 
 - **`effect-curves-single-species.R`**
 This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder plot-results
 
 - **`performance-results-single-species.R`**
-This script takes the **`ParBayesianOptimization`** objects from the folder bayesian-optimization and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder performance-results
+This script takes the `ParBayesianOptimization` objects from the folder bayesian-optimization and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder performance-results.
 
 - **`plots-single-species.R`**
 This script produces the predictive maps obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here.
 
 
 # pooled-models 
+
+This folder contains the necessary code for the pooled SDDR models. The included folders contain the necessary `deepregression` repo, the pooled data set, Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
+
+- **`bayes-hopt-pooled.R`**
+This script performs Bayesian Hyperparameter Optimization for all three predictor types. Subsequently, the models are estimated ten times to produce the final results. The folder "bayesian-optimization-results" contains the resulting `ParBayesianOptimization` objects and "performance-results" the respective AUC and Brier scores.
+
+- **`full-model-datagen.R`**
+This script takes the raw data (**not included here**) and produces the pooled and multivariate data sets and generates spatially decorrelated cross-validation folds using  `blockCV`.
+
+# multi-species-models
+
+
+
 
