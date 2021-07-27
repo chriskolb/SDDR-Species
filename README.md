@@ -3,7 +3,7 @@ Species Distribution Modeling of Disease Vector Species using Semi-Structured De
 
 **Disclaimer 1**: The analysis requires the package **`deepregression`**, which is supplied in the folders "repo". Note that this package requires **`python`**, **`tensorflow`** and **`tensorflow_probability`** and other **`R`** dependencies. See the README files in the "deepregression-master" folder within "repo". Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models.
 
-**Disclaimer 2**: The analysis is not entirely reproducible as it relies on some confidential data and packages that could not be made public.
+**Disclaimer 2**: The analysis is not entirely reproducible as it relies on some confidential data and packages that could not be made public. Script that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution plots (plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (resulting data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`.
 
 ## Folder structure
 Overview of project files and folders:
@@ -45,7 +45,7 @@ This folder contains the necessary code for the pooled SDDR models. The included
 This script performs Bayesian Hyperparameter Optimization for all three predictor types. Subsequently, the models are estimated ten times to produce the final results. The folder "bayesian-optimization-results" contains the resulting `ParBayesianOptimization` objects and "performance-results" the respective AUC and Brier scores. Also runs for several days.
 
 - **`full-model-datagen.R`**
-This script takes the raw data (**not included here**) and produces the pooled and multivariate data sets and generates spatially decorrelated cross-validation folds using  `blockCV`.
+This script takes the raw data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in data folder) and generates spatially decorrelated cross-validation folds using  `blockCV`. Although the raw data is not included, the resulting data set is included.
 
 # multi-species-models
 
