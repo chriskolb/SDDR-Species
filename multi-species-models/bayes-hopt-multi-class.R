@@ -464,8 +464,6 @@ ScoreResult <- bayesOpt(
 ## prepare model with optimized hyperparameters ################################################
 ################################################################################################
 
-#BhoptResult <- readRDS(file.path(main.path, "temp", "bayes-opt-full-deep-spatcv-2020-07-27-0902.rds"))
-
 # get best parameters for highest CV AUC
 best.pars.bopt <- getBestPars(ScoreResult)
 #best.pars.bopt <- getBestPars(ScoreResultAdd)
