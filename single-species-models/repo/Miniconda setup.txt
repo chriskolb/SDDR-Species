@@ -1,7 +1,12 @@
-For single species models with deepregression version 16.06.2020
+I used the R package reticulate to install Miniconda using reticulate::install_miniconda() in the R console. This automatically creates a conda env called r-reticulate. Then I opened Anaconda prompt on Windows PC and re-created the environment using the correct Python, Tensorflow and Tensorflow Probability versions.
 
+- conda env remove --name r-reticulate
 - conda create --name r-reticulate
 - conda activate r-reticulate
 - conda install python=3.7.10
 - pip install tensorflow==2.0.0 tensorflow-probability==0.8.0
 - conda deactivate
+
+
+
+
