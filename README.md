@@ -13,10 +13,10 @@ utility functions to transform rasters to data frames and vice versa
 (the data import won't work outside of the BDI/without connection to mastergrids). Also contains two functions `grid_to_df` and `df_to_grid` which
 convert RasterLayer/RasterBrick object to a data frame and vice versa.
 
-## Folder structure
+# Folder structure
 Overview of project files and folders:
 
-# single-species-models
+## single-species-models
 
 This folder contains the necessary code for the single-species SDDR models as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the output of the scripts below.
 
@@ -35,7 +35,7 @@ This script takes the pre-computed `ParBayesianOptimization` objects from the fo
 - **`plots-single-species.R`**
 This script produces the predictive maps obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here.
 
-# pooled-models 
+## pooled-models 
 
 This folder contains the necessary code for the pooled SDDR models. Nested folders contain the necessary `deepregression` repo, the pooled data set, Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
@@ -45,7 +45,7 @@ This script performs Bayesian Hyperparameter Optimization for all three predicto
 - **`full-model-datagen.R`**
 This script takes the raw data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in data folder) and generates spatially decorrelated cross-validation folds using  `blockCV`. Although the raw data is not included, the resulting data set is included.
 
-# multi-species-models
+## multi-species-models
 
 This folder contains the necessary code for the multi-species SDDR approaches. Nested folders contain the necessary `deepregression` repo, the multivariate data set, pre-computed bayesian optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
