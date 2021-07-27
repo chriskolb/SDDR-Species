@@ -5,9 +5,6 @@ Species Distribution Modeling of Disease Vector Species using Semi-Structured De
 
 **Disclaimer 2**: The analysis is not entirely reproducible as it relies on some confidential data and packages that could not be made public. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution plots (plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (resulting data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`).
 
-## Folder structure
-Overview of project files and folders:
-
 - Preliminary notes:
     + The initial steps of this project requiere access to the **`mastergrids`** folder at Malaria Atlas Project and will thus not be fully reproducible. **`mastergrids`** is
 an **`R`** package that facilitates the import of environmental
@@ -15,6 +12,9 @@ raster data from the **`mastergrids`** folder at BDI MAP and some
 utility functions to transform rasters to data frames and vice versa
 (the data import won't work outside of the BDI/without connection to mastergrids). Also contains two functions `grid_to_df` and `df_to_grid` which
 convert RasterLayer/RasterBrick object to a data frame and vice versa.
+
+## Folder structure
+Overview of project files and folders:
 
 # single-species-models
 
