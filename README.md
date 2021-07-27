@@ -1,5 +1,6 @@
 # Species Distribution Modeling of vector species for <em>American Trypanosomiasis</em> using Semi-Structured Deep Distributional Regression
-Species Distribution Modeling of Disease Vector Species using Semi-Structured Deep Distributional Regression
+
+This repository contains code and data for the analysis of multiple <em>triatomine</em> species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. 
 
 **Disclaimer 1**: The analysis requires the **`R`** package **`deepregression`**, which is supplied in the folders "repo". Note that this package requires **`python`**, **`tensorflow`** and **`tensorflow_probability`** and other **`R`** dependencies. See the README files in the "deepregression-master" folder within "repo". Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models.
 
