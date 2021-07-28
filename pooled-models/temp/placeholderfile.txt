@@ -1,0 +1,1 @@
+All outputs of the pooled-models scripts go in this folder
