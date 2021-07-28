@@ -167,7 +167,7 @@ loaded via a namespace (and not attached):
 [141] munsell_0.5.0         e1071_1.7-7           haven_2.4.1           reshape2_1.4.4        gtable_0.3.0 
 ```
 
-Moreover, the following packages are installed in the anaconda environment `r-reticulate`
+Moreover, the following packages are installed in the conda environment `r-reticulate`
 
 ```
 
