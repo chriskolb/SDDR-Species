@@ -52,7 +52,7 @@ Same as for `bayes-hopt-multi-class`, only that the multivariate data are modele
 - **`multi-mars.R`**
 This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `mmars-model`.
 
-## Exemplary Set-Up
+# Exemplary Set-Up
 
 This section describes the exact set-up used to run the exemplary single-species script **`performance-results-single-species.R`** on the HU LEQR server Galton using **`R`** version 4.0.3. This was the first time I used that specific server, which means that no prior changes were made and no other **`R`** packages were installed beforehand, i.e. if the following does not work the problem is perhaps on the side of your operating system or **`R`** installation/dependencies.
 
