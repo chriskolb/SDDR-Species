@@ -54,11 +54,11 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 
 ## Exemplary Set-Up
 
-This section describes the exact set-up used to run the exemplary single-species script **`performance-results-single-species.R`** on the HU LEQR server Morrison running **`R`** version 4.0.3.
+This section describes the exact set-up used to run the exemplary single-species script **`performance-results-single-species.R`** on the HU LEQR server Morrison using **`R`** version 4.0.3.
 
 1. Prior to running any code, make sure the **`R`** packages `devtools`, `rstudioapi`, `pacman` and `reticulate` are installed.
 2. Install Miniconda using `reticulate::install_miniconda()`in the **`R`** console, which automatically creates a conda environment called `r-reticulate`
-3. For `deepregression` to work properly, we have to install the appropriate dependencies in `r-reticulate`. To do so, open the Miniconda prompt and run
+3. For `deepregression` to work properly, we have to install the appropriate dependencies in `r-reticulate`. To do so, open the Anaconda (Miniconda) prompt and run
 ```
 conda env remove --name r-reticulate
 conda create --name r-reticulate
@@ -71,7 +71,7 @@ conda deactivate
 5. run the first few lines until the `pacman::p_load()` command loading the required dependencies for `deepregression` (I did not install from sources the packages which need compilation). This might take some minutes
 6. force reticulate to attach to the conda environment `r-reticulate` using `use_condaenv("r-reticulate", required = T)`
 7. load the deepregression package using `devtools::load_all(repo.path)`
-8. the remainder of the script is a nested loop over all (7) species and all (3) predictor types, with each iteration training the optimized model for each species x predictor combination several times and averaging the final performance metrics (AUC and Brier score). The loop can be run in whole (runs for several hours!) 
+8. the remainder of the script is a nested loop over all (7) species and all (3) predictor types, with each iteration training the optimized model for each species x predictor combination several times and averaging the final performance metrics (AUC and Brier score). The loop can be run in whole (runs for several hours!).
 
 ## Session Info (might help for set-up to be able to run code properly)
 
