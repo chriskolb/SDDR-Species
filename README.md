@@ -148,6 +148,8 @@ loaded via a namespace (and not attached):
 [141] munsell_0.5.0         e1071_1.7-7           haven_2.4.1           reshape2_1.4.4        gtable_0.3.0 
 ```
 
+Moreover, the following packages are installed in the anaconda environment `r-reticulate`
+
 ```
 
 (base) C:\>conda activate r-reticulate
@@ -202,7 +204,5 @@ wheel                  0.36.2
 wincertstore           0.2
 wrapt                  1.12.1
 zipp                   3.5.0
-
-(r-reticulate) C:\>
 ```
 
