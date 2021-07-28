@@ -73,7 +73,7 @@ conda deactivate
 7. load the deepregression package using `devtools::load_all(repo.path)`
 8. the remainder of the script is a nested loop over all (7) species and all (3) predictor types, with each iteration training the optimized model for each species x predictor combination several times and averaging the final performance metrics (AUC and Brier score). The loop can be run in whole (runs for several hours!).
 
-## Session Info (might help for set-up to be able to run code properly)
+## Session Info (might help in case of problems with correct set-up)
 
 
 ```r
