@@ -77,7 +77,7 @@ conda deactivate
 
 
 ```r
-> py_config()
+> reticulate::py_config()
 python:         C:/Users/kolchris/AppData/Local/r-miniconda/envs/r-reticulate/python.exe
 libpython:      C:/Users/kolchris/AppData/Local/r-miniconda/envs/r-reticulate/python37.dll
 pythonhome:     C:/Users/kolchris/AppData/Local/r-miniconda/envs/r-reticulate
@@ -88,9 +88,9 @@ numpy_version:  1.20.2
 tensorflow_probability:C:\Users\kolchris\AppData\Local\R-MINI~1\envs\R-RETI~1\lib\site-packages\tensorflow_probability\__init__.p
 
 NOTE: Python version was forced by use_python function
-> tf_version()
+> tensorflow::tf_version()
 [1] ‘2.0’
-> tfp_version()
+> tfprobability::tfp_version()
 [1] ‘0.8’
 > sessionInfo()
 R version 4.0.3 (2020-10-10)
