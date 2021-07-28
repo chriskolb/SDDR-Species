@@ -1,0 +1,1 @@
+All outputs of the single-species scripts go in this folder
