@@ -52,7 +52,7 @@ Same as for `bayes-hopt-multi-class`, only that the multivariate data are modele
 - **`multi-mars.R`**
 This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `mmars-model`.
 
-## Session Info (might help for set-up)
+## Session Info (might help for set-up to be able to run code properly)
 
 
 
