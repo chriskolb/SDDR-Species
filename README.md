@@ -54,8 +54,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 
 ## Session Info (might help for set-up to be able to run code properly)
 
-
-
+Prior to running any code, make sure the **`R`** packages `devtools`, `rstudioapi`, `pacman` and `reticulate` are installed.
 
 ```r
 > py_config()
