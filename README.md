@@ -54,11 +54,11 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 
 ## Exemplary Set-Up
 
-This section describes the exact set-up used to run the exemplary single-species script **`performance-results-single-species.R`** on the HU LEQR server Morrison using **`R`** version 4.0.3.
+This section describes the exact set-up used to run the exemplary single-species script **`performance-results-single-species.R`** on the HU LEQR server Galton using **`R`** version 4.0.3. This was the first time I used that specific server, which means that no prior changes were made and no other **`R`** packages were installed beforehand, i.e. if the following does not work the problem is perhaps on the side of your operating system or **`R`** installation/dependencies.
 
 1. Prior to running any code, make sure the **`R`** packages `devtools`, `rstudioapi`, `pacman` and `reticulate` are installed.
 2. Install Miniconda using `reticulate::install_miniconda()`in the **`R`** console, which automatically creates a conda environment called `r-reticulate`
-3. For `deepregression` to work properly, we have to install the appropriate dependencies in `r-reticulate`. To do so, open the Anaconda (Miniconda) prompt and run
+3. For `deepregression` to work properly, you have to install the appropriate dependencies in `r-reticulate`. To do so, open the Anaconda (Miniconda) prompt and run
 ```
 conda env remove --name r-reticulate
 conda create --name r-reticulate
