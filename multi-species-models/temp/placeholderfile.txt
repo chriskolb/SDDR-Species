@@ -1,0 +1,1 @@
+All outputs of the multi-species scripts go in this folder
