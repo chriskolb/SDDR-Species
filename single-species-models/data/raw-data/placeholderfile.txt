@@ -1,0 +1,5 @@
+This folder contains the raw data supplied by Bender et al. Too big to include on github. Files are
+1. env_grids.grd
+2. env_grids.cri
+3. folds_list_vector_presence.Rds
+4. countries.Rds
