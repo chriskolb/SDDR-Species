@@ -1,6 +1,10 @@
 ################################################################################################
 # Bayesian Hyperparameter Optimization for Full model including all species
 ################################################################################################
+# This script does NOT automatically loop over all three predictor types for runtime reasons
+# Running Bayesian optimization and performance scoring for one predictor type already takes 1+ days
+# The predictor type has to be specified in pred.type using either "deep", "smooth", or "smooth-deep"
+# To obtain results for all predictor types, run script once for each type
 
 rm(list=ls())
 
