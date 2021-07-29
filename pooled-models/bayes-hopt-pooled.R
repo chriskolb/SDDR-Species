@@ -1,6 +1,9 @@
 ######################################################################################################
 # Bayesian Hyperparameter Optimization and performance scoring for pooled model including all species
 ######################################################################################################
+# This script does NOT automatically loop over all three predictor types for runtime reasons
+# Running Bayesian Optimization and performance scoring for one predictor type already takes 1+ days
+# The predictor type has to be specified in pred.type using either "deep", "smooth", or "smooth-deep"
 
 rm(list=ls())
 
