@@ -11,7 +11,7 @@ Overview of project files and folders:
 
 ## single-species-models
 
-This folder contains the necessary code for the single-species SDDR models as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the output of the scripts below.
+This folder contains the necessary code for the single-species SDDR models, plots, as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts below.
 
 - **`performance-results-single-species.R`**
 This script takes the pre-computed optimal hyperparameters in the `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
