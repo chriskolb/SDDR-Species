@@ -64,7 +64,7 @@ conda env remove --name r-reticulate
 conda create --name r-reticulate
 conda activate r-reticulate
 conda install python=3.7.10
-pip install tensorflow==2.0.0 tensorflow-probability==0.8.0
+pip install tensorflow==2.0.0 tensorflow_probability==0.8.0
 conda deactivate
 ```
 4. open **`performance-results-single-species.R`** 
