@@ -1,10 +1,6 @@
 ######################################################################################################
 # Bayesian Hyperparameter Optimization and performance scoring for pooled model including all species
 ######################################################################################################
-# This script does NOT automatically loop over all three predictor types for runtime reasons
-# Running Bayesian optimization and performance scoring for one predictor type already takes 1+ days
-# The predictor type has to be specified in pred.type using either "deep", "smooth", or "smooth-deep"
-# To obtain results for all predictor types, run script once for each type
 
 rm(list=ls())
 
@@ -12,7 +8,13 @@ rm(list=ls())
 
 # choose SDDR predictor
 preds.list <- c("deep", "smooth", "smooth-deep")
-pred.type = "deep" # smooth, deep, smooth-deep
+
+# loop over predictor specifications
+
+#pred.type = "deep" # smooth, deep, smooth-deep
+
+for(pred.type in preds.list){
+
 
 # fixed number of epochs for optimization
 epochs.cv = 100
@@ -637,8 +639,8 @@ saveRDS(simu.runs.all, file = file.path(temp.data, paste0("simu-runs-pooled-", p
 saveRDS(brier.runs.all, file = file.path(temp.data, paste0("brier-simus-pooled-", pred.type, "-",timestamp, ".rds")))
 
 
-
-
+# end loop over predictor types from beginning
+}
 
 
 
