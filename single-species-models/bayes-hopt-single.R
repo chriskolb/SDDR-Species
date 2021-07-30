@@ -497,9 +497,9 @@ for (spec in species.list){
                                          decay = decay.nn, 
                                          lr = lr.nn 
                                          ),
-                                       orthog_type = "manual",
-                                       zero_constraint_for_smooths = TRUE,
-                                       absorb_cons = FALSE, 
+                                       #orthog_type = "manual",
+                                       #zero_constraint_for_smooths = TRUE,
+                                       #absorb_cons = FALSE, 
                                        df = best.pars.bopt$df.smooth
                                        #,validation_data = list(x.test.s, y.test)
                                        #,cv_folds = spat.cv.indices, 
