@@ -6,12 +6,11 @@ rm(list=ls())
 
 # script parameters: 
 
-# choose SDDR predictor
+# define SDDR predictor list
 preds.list <- c("deep", "smooth", "smooth-deep")
 
 # loop over predictor specifications
 #pred.type = "deep" # smooth, deep, smooth-deep
-
 for(pred.type in preds.list){
 
 # fixed number of epochs for optimization
