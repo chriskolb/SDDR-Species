@@ -4,6 +4,7 @@
 
 rm(list=ls())
 
+# define list of seven modeled species
 species.list <- c("tinfestans", "tdimidiata", "pmegistus", "tbrasiliensis", "tsordida", "tpseudomaculata", "tbarberi")
 #species.list <- c("pmegistus")
 #spec = "pmegistus"
