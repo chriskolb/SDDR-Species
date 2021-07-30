@@ -327,8 +327,8 @@ for (spec in species.list){
     
     if(pred.type == "smooth-deep"){
       bounds <- list(
-        hidden.units.num  = c(3L, 3L) # 32, 64, 128, 200
-        ,hidden.layers    = c(1L, 1L) # layers after first hidden layer have hidden.units/2 units
+        hidden.units.num  = c(3L, 4L) # 32, 64, 128, 200
+        ,hidden.layers    = c(1L, 2L) # layers after first hidden layer have hidden.units/2 units
         ,log.lr.nn        = c(-7, -2.5)
         ,log.decay.nn     = c(-7, -3.5)
         #,batch.size.nn   = c(5L, 30L)
