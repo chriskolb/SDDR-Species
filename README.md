@@ -4,6 +4,8 @@ This repository contains code and data for the analysis of multiple <em>triatomi
 
 ## This is the single-species data:
 
+The following table describes the constitution of the seven single-species data sets.
+
  **Single-Species Datasets** | **presence points** | **pseudo-absences** | **Sum** 
 -----------------------------|---------------------|---------------------|---------
  T. Infestans                | 2,499               | 4,458               | 6,957   
@@ -14,6 +16,29 @@ This repository contains code and data for the analysis of multiple <em>triatomi
  T. Pseudomaculata           | 804                 | 3,100               | 3,904   
  T. Barberi                  | 455                 | 2,161               | 2,616   
  Sum                         | 7,541               | 22,919              | 30,460  
+ 
+ For the single-species SDDR models and competing benchmarks, the following results were obtained:
+ 
+ 
+ **Single-S. Test AUC** | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM (mgcv)** | **XGBoost (xgboost)** | **MaxEnt (maxnet)** | **Bender et al.** 
+------------------------|----------------|----------------|--------------------|----------------|-----------------------|---------------------|-------------------
+                        | (1)            | (2)            | (3)                | (4)            | (5)                   | (6)                 | (7)               
+ T. Infestans           | 0.965          | **0.977**      | 0.976              | 0.970          | 0.973                 | 0.973               | 0.96              
+                        | (1 e-6)        | (3 e-3)        | (2 e-3)            | (0.00)         | (0.00)                | (0.00)              |                   
+ T. Dimidiata           | 0.925          | 0.960          | 0.962              | 0.963          | **0.965**             | 0.946               | 0.97              
+                        | (3 e-3)        | (2 e-3)        | (1 e-3)            | (0.00)         | (0.00)                | (0.00)              |                   
+ P.Megistus             | 0.819          | 0.828          | **0.830**          | 0.827          | 0.828                 | 0.821               | 0.83              
+                        | (1 e-4)        | (2 e-3)        | (2 e-3)            | (0.00)         | (0.00)                | (0.00)              |                   
+ T. Brasiliensis        | 0.674          | 0.690          | 0.682              | **0.694**      | 0.640                 | 0.666               | 0.69              
+                        | (1 e-4)        | (5 e-3)        | (8 e-3)            | (0.00)         | (0.00)                | (0.00)              |                   
+ T. Sordida             | 0.827          | 0.838          | 0.830              | 0.826          | **0.848**             | 0.803               | 0.83              
+                        | (2 e-3)        | (5 e-3)        | (7 e-3)            | (0.00)         | (0.00)                | (0.00)              |                   
+ T. Pseudomaculata      | 0.692          | 0.724          | 0.709              | 0.725          | 0.716                 | **0.741**           | 0.73              
+                        | (3 e-3)        | (4 e-3)        | (1 e-2)            | (0.00)         | (0.00)                | (0.00)              |                   
+ T. Barberi             | 0.867          | 0.862          | 0.867              | **0.873**      | 0.870                 | 0.858               | 0.88              
+                        | (5 e-4)        | (7 e-3)        | (1 e-2)            | (0.00)         | (0.00)                | (0.00)              |                   
+
+ 
 
 
 
@@ -35,7 +60,8 @@ This script takes the pre-computed optimal hyperparameters in the `ParBayesianOp
 
 - **`benchmarks-single.R`** (runtime: **some minutes** on LEQR server)
 
-This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt).  
+This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). 
+
 
 - **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
 
