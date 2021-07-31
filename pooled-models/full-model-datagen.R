@@ -16,7 +16,7 @@ pacman::p_load(Matrix, dplyr, keras, mgcv, reticulate, tensorflow, tfprobability
                raster, tmaptools, stringr, tmap, purrr, sp, magrittr, sf, rgeos,
                tidyr, tibble, dismo, pbapply, geosphere, spatstat, pammtools, MLmetrics,
                ggplot2, caret, blockCV, fields, furrr, rlang, rsample, automap, pals,
-               stars, classInt
+               stars, classInt, Rcpp
                )
 
 
