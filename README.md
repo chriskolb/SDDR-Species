@@ -19,6 +19,8 @@ This script takes the pre-computed optimal hyperparameters in the `ParBayesianOp
 
 (runtime: **some hours** on LEQR server)
 
+![plot](SDDR-Species/single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png)
+
 - **`benchmarks-single.R`** 
 
 This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt).
