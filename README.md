@@ -33,7 +33,7 @@ This script produces the partial effect curves of the optimized models for the s
 
 <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" alt="drawing" width="600"/>
 
-The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model with only smooth effect terms, and an SDDR model with both, structured and DNN effects. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
+The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only smooth effect terms, and an SDDR model (2) with both, structured and DNN effects. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
 
 - **`plots-single-species.R`** 
 
