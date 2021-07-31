@@ -61,7 +61,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 |   |   +-- data-preprocessing-species.R
 |   |   +-- data-preprocessing.R
 |   |   \-- formulae.R
-|   +-- bayes-hopt-multi-class.R
+|   +-- **bayes-hopt-multi-class.R**
 |   +-- bayes-hopt-multivariate.R
 |   +-- data
 |   |   \-- full-model-list.rds
