@@ -463,26 +463,3 @@ wrapt                  1.12.1
 zipp                   3.5.0
 ```
 
-| \multicolumn{1}{c}{}               |        |
-|------------------------------------|--------|
-| \begin{tabular}[c]{@{}c@{}}SDDR    |
-| \begin{tabular}[c]{@{}c@{}}SDDR    |
-| \begin{tabular}[c]{@{}c@{}}SDDR    |
-| \begin{tabular}[c]{@{}c@{}}GAM     |
-| \begin{tabular}[c]{@{}c@{}}XGBoost |
-| \begin{tabular}[c]{@{}c@{}}MaxEnt  |
-| \multicolumn{1}{c}{}               | (1)    | (2)            | (3)            | (4)            | (5)            | \multicolumn{1}{c|}{(6)}            | (7)  |
-| \textit{T. Infestans}              | 0.965  | \textbf{0.977} | 0.976          | 0.970          | 0.973          | \multicolumn{1}{c|}{0.973}          | 0.96 |
-| \textit{}                          | (1e-6) | (3e-3)         | (2e-3)         | (0.00)         | (0.00)         | \multicolumn{1}{c|}{(0.00)}         |      |
-| \textit{T. Dimidiata}              | 0.925  | 0.960          | 0.962          | 0.963          | \textbf{0.965} | \multicolumn{1}{c|}{0.946}          | 0.97 |
-| \textit{}                          | (3e-3) | (2e-3)         | (1e-3)         | (0.00)         | (0.00)         | \multicolumn{1}{c|}{(0.00)}         |      |
-| \textit{P. Megistus}               | 0.819  | 0.828          | \textbf{0.830} | 0.827          | 0.828          | \multicolumn{1}{c|}{0.821}          | 0.83 |
-| \textit{}                          | (1e-4) | (2e-3)         | (2e-3)         | (0.00)         | (0.00)         | \multicolumn{1}{c|}{(0.00)}         |      |
-| \textit{T. Brasiliensis}           | 0.674  | 0.690          | 0.682          | \textbf{0.694} | 0.640          | \multicolumn{1}{c|}{0.666}          | 0.69 |
-| \textit{}                          | (1e-4) | (5e-3)         | (8e-3)         | (0.00)         | (0.00)         | \multicolumn{1}{c|}{(0.00)}         |      |
-| \textit{T. Sordida}                | 0.827  | 0.838          | 0.830          | 0.826          | \textbf{0.848} | \multicolumn{1}{c|}{0.803}          | 0.83 |
-| \textit{}                          | (2e-3) | (5e-3)         | (7e-3)         | (0.00)         | (0.00)         | \multicolumn{1}{c|}{(0.00)}         |      |
-| \textit{T. Pseudomaculata}         | 0.692  | 0.724          | 0.709          | 0.725          | 0.716          | \multicolumn{1}{c|}{\textbf{0.741}} | 0.73 |
-|                                    | (3e-3) | (4e-3)         | (1e-2)         | (0.00)         | (0.00)         | \multicolumn{1}{c|}{(0.00)}         |      |
-| \textit{T. Barberi}                | 0.867  | 0.862          | 0.867          | \textbf{0.873} | 0.870          | \multicolumn{1}{c|}{0.858}          | 0.88 |
-|                                    | (5e-4) | (7e-3)         | (1e-2)         | (0.00)         | (0.00)         | \multicolumn{1}{c|}{(0.00)}         |      |
