@@ -333,7 +333,7 @@ if(pred.type == "smooth-deep"){
     ,dropout.nn       = c(0.01, 0.49)
     #,lambda.l1       = c(1e-6, 5e-2)
     #,epochs.cv       = c(4L, 16L)
-    ,df.smooth        = c(8L, 20L)
+    ,df.smooth        = c(6L, 16L)
     #,act.num         = c(1L,2L) # 1=relu,2=tanh
     #,init.num        = c(1L,2L) # 1=glorot_normal, 2=he_normal
     #,batchnorm       = c(1L,2L) # 1=yes, 2=no
@@ -365,7 +365,7 @@ if(pred.type == "smooth-deep"){
       #,dropout.nn       = c(0.01, 0.49)
       #,lambda.l1        = c(1e-6, 5e-2)
       #,epochs.cv        = c(4L, 16L)
-      ,df.smooth         = c(10L, 20L)
+      ,df.smooth         = c(6L, 18L)
       #,act.num          = c(1L,2L) # 1=relu,2=tanh
       #,init.num         = c(1L,2L) # 1=glorot_normal, 2=he_normal
       #,batchnorm        = c(1L,2L) # 1=yes, 2=no
