@@ -19,10 +19,6 @@ This script takes the pre-computed optimal hyperparameters in the `ParBayesianOp
 
 (runtime: **some hours** on LEQR server)
 
-![plot](https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png)
-
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png" alt="drawing" width="600"/>
-
 - **`benchmarks-single.R`** 
 
 This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt).
@@ -35,12 +31,17 @@ This script produces the partial effect curves of the optimized models for the s
 
 (runtime: **some hours** on LEQR server)
 
+<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" alt="drawing" width="600"/>
+
 
 - **`plots-single-species.R`** 
 
 This script produces the predictive maps obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here.
 
 (runtime: **several hours** on LEQR server)
+
+
+<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png" alt="drawing" width="800"/>
 
 - **`bayes-hopt-single.R`**
 
