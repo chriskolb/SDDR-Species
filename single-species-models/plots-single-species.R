@@ -12,7 +12,7 @@ spec = "tdimidiata"
 
 # define SDDR predictor list (plots are only created for smooth+deep predictor)
 preds.list <- c("smooth","deep","smooth-deep")
-pr = "smooth"
+pr = "deep"
 
 # fixed number of epochs for optimization
 epochs.cv = 100
