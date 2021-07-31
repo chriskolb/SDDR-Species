@@ -2,6 +2,21 @@
 
 This repository contains code and data for the analysis of multiple <em>triatomine</em> species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. 
 
+## This is the single-species data:
+
+                               | **presence points** | **pseudo-absences** | **Sum** 
+-------------------------------|---------------------|---------------------|--------------
+ T. Infestans                  | 2,499               | 4,458               | 6,957        
+ T. Dimidiata                  | 1,186               | 2,883               | 4,069        
+ P. Megistus                   | 968                 | 3,409               | 4,377        
+ T. Brasiliensis               | 820                 | 1,989               | 2,809        
+ T. Sordida                    | 809                 | 4,919               | 5,728        
+ T. Pseudomaculata             | 804                 | 3,100               | 3,904        
+ T. Barberi                    | 455                 | 2,161               | 2,616        
+ **Sum**                       | 7,541               | 22,919              | 30,460       
+
+
+
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models. Figuring out the right set-up and dependencies to run the code can be tedious.
 
 **Disclaimer 2**: The analysis is not entirely reproducible using only the data and code in this repo, as it relies on some large data could not be included here. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-processes data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
@@ -12,19 +27,6 @@ Overview of project files and folders:
 ## single-species-models
 
 This folder contains the necessary code for the single-species SDDR models, plots, as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts below.
-
- **\hline \hline**             | **presence points** | **pseudo-absences** | **$\Sigma$** 
--------------------------------|---------------------|---------------------|--------------
- \cline { 2 - 4 } T. Infestans | 2,499               | 4,458               | 6,957        
- T. Dimidiata                  | 1,186               | 2,883               | 4,069        
- P. Megistus                   | 968                 | 3,409               | 4,377        
- T. Brasiliensis               | 820                 | 1,989               | 2,809        
- T. Sordida                    | 809                 | 4,919               | 5,728        
- T. Pseudomaculata             | 804                 | 3,100               | 3,904        
- T. Barberi                    | 455                 | 2,161               | 2,616        
- \multicolumn{1}{c} {$\Sigma$} | 7,541               | 22,919              | 30,460       
-
-
 
 
 - **`performance-results-single-species.R`**  (runtime: **some hours** on LEQR server)
