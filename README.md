@@ -47,11 +47,11 @@ To re-run the thesis single-species AUC and Brier results with pre-computed `Par
 
 This folder contains the necessary code for the pooled SDDR models. Nested folders contain the necessary `deepregression` repo, the pooled data set, Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
-- **`bayes-hopt-pooled.R`** (runtime: **several days**)
+- **`bayes-hopt-pooled.R`** (runtime: **several days** on LEQR server)
 
 This script performs Bayesian Hyperparameter Optimization for all three predictor types. Subsequently, the models are estimated ten times to produce the final results. The folder `bayesian-optimization-results` contains the resulting `ParBayesianOptimization` objects and the folder `performance-results` the respective AUC and Brier scores. Also runs for several days.
 
-- **`full-model-datagen.R`** (runtime: **several minutes**)
+- **`full-model-datagen.R`** (runtime: **several minutes** on LEQR server)
 
 This script takes the raw species occurrence and environmental grid data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in `data` folder of pooled-models and multi-species-models) and generates spatially decorrelated cross-validation folds using  `blockCV`. Although the raw data is not included, the resulting data set is included.
 
@@ -59,15 +59,15 @@ This script takes the raw species occurrence and environmental grid data (**not 
 
 This folder contains the necessary code for the multi-species SDDR approaches. Nested folders contain the necessary `deepregression` repo, the multivariate data set, pre-computed bayesian optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
-- **`bayes-hopt-multi-class.R`** (runtime: **several days**)
+- **`bayes-hopt-multi-class.R`** (runtime: **several days** on LEQR server)
 
 This script performs Bayesian Hyperparameter Optimization for all three predictor types in the multi-class modeling approach using a Multinoulli distribution to model the label powerset of the response labels. Subsequently, the models are estimated ten times to produce the final results. The folder `multi-class-model` contains the resulting `ParBayesianOptimization` objects and performance results, i.e. the respective AUC and Brier scores. Also runs for several days.
 
-- **`bayes-hopt-multivariate.R`** (runtime: **several days**)
+- **`bayes-hopt-multivariate.R`** (runtime: **several days** on LEQR server)
 
 Same as for `bayes-hopt-multi-class`, only that the multivariate data are modeled using seven independent Bernoulli distributions. Results are contained in `multi-species-models/multivariate-model`.
 
-- **`multi-mars.R`** (runtime: **several minutes**)
+- **`multi-mars.R`** (runtime: **several minutes** on LEQR server)
 
 This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `multi-species/models/mmars-model`.
 
