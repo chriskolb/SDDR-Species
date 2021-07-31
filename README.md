@@ -188,7 +188,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     |   +-- tinfestans.rds
     |   +-- tpseudomaculata.rds
     |   \-- tsordida.rds
-    +----------------------------------------------------------------------------------------------- effect-curves-single-species.R
+    +-------------------------------------------------------------------------------------- effect-curves-single-species.R
     +-- performance-results
     |   +-- simu-runs-pmegistus-deep-2021-07-14-1505.rds
     |   +-- simu-runs-pmegistus-smooth-2021-07-14-1505.rds
@@ -211,7 +211,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     |   +-- simu-runs-tsordida-deep-2021-07-14-1505.rds
     |   +-- simu-runs-tsordida-smooth-2021-07-14-1505.rds
     |   \-- simu-runs-tsordida-smooth-deep-2021-07-14-1505.rds
-    +----------------------------------------------------------------------------------------------- performance-results-single-species.R
+    +------------------------------------------------------------------------------------- performance-results-single-species.R
     +-- plot-results
     |   +-- partial-effects
     |   |   \-- pmegistus
