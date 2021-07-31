@@ -13,6 +13,20 @@ Overview of project files and folders:
 
 This folder contains the necessary code for the single-species SDDR models, plots, as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts below.
 
+ **\hline \hline**             | **presence points** | **pseudo-absences** | **$\Sigma$** 
+-------------------------------|---------------------|---------------------|--------------
+ \cline { 2 - 4 } T. Infestans | 2,499               | 4,458               | 6,957        
+ T. Dimidiata                  | 1,186               | 2,883               | 4,069        
+ P. Megistus                   | 968                 | 3,409               | 4,377        
+ T. Brasiliensis               | 820                 | 1,989               | 2,809        
+ T. Sordida                    | 809                 | 4,919               | 5,728        
+ T. Pseudomaculata             | 804                 | 3,100               | 3,904        
+ T. Barberi                    | 455                 | 2,161               | 2,616        
+ \multicolumn{1}{c} {$\Sigma$} | 7,541               | 22,919              | 30,460       
+
+
+
+
 - **`performance-results-single-species.R`**  (runtime: **some hours** on LEQR server)
 
 This script takes the pre-computed optimal hyperparameters in the `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
