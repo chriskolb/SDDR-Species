@@ -40,7 +40,7 @@ This script produces the predictive maps obtained by SDDR (DNN-only predictor ty
 
 The figure above shows predictive distribution maps for the vector species *Triatoma infestans* obtained through SDDR (left) or an `mgcv` GAM.
 
-- **`bayes-hopt-single.R`** (runtime: **<2weeks** one LEQR server)
+- **`bayes-hopt-single.R`** (runtime: **2-3 weeks** on LEQR server)
 
 This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results **(runs for 7+ days!)**. Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. **Results will thus differ**. 
 
