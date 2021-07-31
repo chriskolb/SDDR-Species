@@ -53,7 +53,7 @@ Same as for `bayes-hopt-multi-class`, only that the multivariate data are modele
 This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `mmars-model`.
 
 # Directory Tree of the files contained in the repo
-```
+```bash
 **REPO**
 +-- multi-species-models
 |   +-- auxiliary-scripts
@@ -94,11 +94,11 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 |   |       \-- simu-runs-multi-auc-none-smooth-deep-2020-10-04-0157.rds
 |   +-- repo
 |   |   +-- deepregression-master
-|   |   |   \-- README.md
+|   |   |   
 |   |   \-- mastergrids
-|   |       \-- README.md
+|   |       
 |   \-- temp
-|       \-- placeholderfile.txt
+|       
 +-- pooled-models
 |   +-- auxiliary-scripts
 |   |   +-- data-preprocessing-species.R
@@ -126,11 +126,11 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 |   |   \-- simu-runs-pooled-smooth-deep-2020-10-13-2332.rds
 |   +-- repo
 |   |   +-- deepregression-master
-|   |   |   \-- README.md
+|   |   |   
 |   |   \-- mastergrids
-|   |       \-- README.md
+|   |       
 |   \-- temp
-|       \-- placeholderfile.txt
+|       
 +-- README.md
 \-- single-species-models
     +-- auxiliary-scripts
@@ -259,13 +259,12 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     +-- plots-single-species.R
     +-- repo
     |   +-- deepregression-master
-    |   |   \-- README.md
+    |   |   
     |   +-- mastergrids
-    |   |   \-- README.md
+    |   |   
     |   \-- Miniconda setup.txt
     \-- temp
-        \-- placeholderfile.txt
-
+        
 ```
 
 
