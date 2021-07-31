@@ -20,7 +20,7 @@ The following table describes the constitution of the seven single-species data 
  For the single-species SDDR models and competing benchmarks, the following results were obtained:
  
  
- **Single-S. Test AUC** | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM (mgcv)** | **XGBoost (xgboost)** | **MaxEnt (maxnet)** | **Bender et al.** 
+ **Single Test Auc**    | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM (mgcv)** | **XGBoost (xgboost)** | **MaxEnt (maxnet)** | **Bender et al.** 
 ------------------------|----------------|----------------|--------------------|----------------|-----------------------|---------------------|-------------------
                         | (1)            | (2)            | (3)                | (4)            | (5)                   | (6)                 | (7)               
  T. Infestans           | 0.965          | **0.977**      | 0.976              | 0.970          | 0.973                 | 0.973               | 0.96              
