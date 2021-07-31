@@ -35,7 +35,7 @@ library(devtools)
 pacman::p_load(Matrix, dplyr, keras, mgcv, reticulate, tensorflow, tfprobability, 
                Metrics, DescTools, MLmetrics, caret, xgboost, recipes, yardstick
                ,ParBayesianOptimization, doParallel, muStat, scoring, blockCV, checkmate, 
-               furrr, tmap, rgeos, rgdal, rstudioapi
+               furrr, tmap, rgeos, rgdal, rstudioapi, Rcpp
                )
 
 # force conda environment
