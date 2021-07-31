@@ -10,8 +10,9 @@ library(devtools)
 # load required packages
 ## install.packages("pacman")
 pacman::p_load(Matrix, dplyr, keras, mgcv, reticulate, tensorflow, tfprobability, 
-               Metrics, DescTools, MLmetrics, caret, xgboost, recipes, yardstick,
-               ParBayesianOptimization, doParallel, muStat, scoring, Hmisc, blockCV, earth, UBL)
+               Metrics, DescTools, MLmetrics, Rcpp, caret, xgboost, recipes, yardstick,
+               ParBayesianOptimization, doParallel, muStat, scoring, Hmisc, blockCV
+               ,earth, UBL)
 
 # force conda environment
 #use_condaenv("r-reticulate", required = T)
