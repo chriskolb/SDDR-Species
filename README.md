@@ -4,16 +4,16 @@ This repository contains code and data for the analysis of multiple <em>triatomi
 
 ## This is the single-species data:
 
-                               | **presence points** | **pseudo-absences** | **Sum** 
--------------------------------|---------------------|---------------------|--------------
- T. Infestans                  | 2,499               | 4,458               | 6,957        
- T. Dimidiata                  | 1,186               | 2,883               | 4,069        
- P. Megistus                   | 968                 | 3,409               | 4,377        
- T. Brasiliensis               | 820                 | 1,989               | 2,809        
- T. Sordida                    | 809                 | 4,919               | 5,728        
- T. Pseudomaculata             | 804                 | 3,100               | 3,904        
- T. Barberi                    | 455                 | 2,161               | 2,616        
- **Sum**                       | 7,541               | 22,919              | 30,460       
+ **Single-Species Datasets** | **presence points** | **pseudo-absences** | **Sum** 
+-----------------------------|---------------------|---------------------|---------
+ T. Infestans                | 2,499               | 4,458               | 6,957   
+ T. Dimidiata                | 1,186               | 2,883               | 4,069   
+ P. Megistus                 | 968                 | 3,409               | 4,377   
+ T. Brasiliensis             | 820                 | 1,989               | 2,809   
+ T. Sordida                  | 809                 | 4,919               | 5,728   
+ T. Pseudomaculata           | 804                 | 3,100               | 3,904   
+ T. Barberi                  | 455                 | 2,161               | 2,616   
+ Sum                         | 7,541               | 22,919              | 30,460  
 
 
 
