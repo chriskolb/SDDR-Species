@@ -4,7 +4,7 @@ This repository contains code and data for the analysis of multiple <em>triatomi
 
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`** (see `single-species-models/repo/Miniconda setup.txt` for help), as well as various **`R`** dependencies. See the README files in the "deepregression-master" folder within "repo" for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models. Figuring out the right set-up and dependencies to run the code can be tedious.
 
-**Disclaimer 2**: The analysis is not entirely reproducible (using only the files in the github repo) using only the data and code in this repo, as it relies on some large data or packages that could not be included here. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (outputted data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
+**Disclaimer 2**: The analysis is not entirely reproducible using only the data and code in this repo, as it relies on some large data could not be included here. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-processes data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
 
 # Folder structure
 Overview of project files and folders:
@@ -13,21 +13,22 @@ Overview of project files and folders:
 
 This folder contains the necessary code for the single-species SDDR models, plots, as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts below.
 
-- **`performance-results-single-species.R`**
+- **`performance-results-single-species.R`**  (runtime: some hours on LEQR server)
 This script takes the pre-computed optimal hyperparameters in the `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
 
-- **`benchmarks-single.R`**
+- **`benchmarks-single.R`** (runtime: some minutes on LEQR server)
 This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt).
 
-- **`effect-curves-single-species.R`**
+- **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
 This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder `plot-results`.
 
 
-- **`plots-single-species.R`**
+- **`plots-single-species.R`** (runtime: **several hours** on LEQR server)
 This script produces the predictive maps obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here.
 
-- **`bayes-hopt-single.R`**
-This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results (runs for 7+ days!). Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. Results will thus differ. To re-run the thesis AUC and Brier score results with pre-computed `ParBayesianOptimization` objects (same as results in thesis), use **`effect-curves-single-species.R`**.
+- **`bayes-hopt-single.R`** (runtime: max. 1 week)
+This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results **(runs for 7+ days!)**. Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. **Results will thus differ**. 
+To re-run the thesis single-species AUC and Brier results with pre-computed `ParBayesianOptimization` objects (same as results in thesis), you rather want to run **`effect-curves-single-species.R`**. The script **`bayes-hopt-single.R`** is actually not used in the thesis analasysis and is a mere addition. After having consolidated the predictor-specific multivariate models scripts that perform costly Bayesian Optimization and Model evaluation into one large script that loops over predictor types (or species), an equivalent script was written for the singles-epcies models, although at that point the results for the single-species were already obtaind. Hence this script should be regarded as a helpful complement to **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models, bedies not being used for the actual analysis in the thesis. 
 
 ## pooled-models 
 
