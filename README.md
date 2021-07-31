@@ -4,7 +4,7 @@ This repository contains code and data for the analysis of multiple <em>triatomi
 
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`** (see `single-species-models/repo/Miniconda setup.txt` for help), as well as various **`R`** dependencies. See the README files in the "deepregression-master" folder within "repo" for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models. Figuring out the right set-up and dependencies to run the code can be tedious.
 
-**Disclaimer 2**: The analysis is not entirely reproducible (using only the files in the github repo) as it relies on some large data or packages that could not be included here. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution maps (plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (resulting data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts either require the **`mastergrids`** package from the Malaria Atlas Project (can not be included) or the raw environmental grid data (too big) and will thus not be fully computable. **`mastergrids`** is an **`R`** package that facilitates the import of environmental raster data from the **`mastergrids`** folder at BDI MAP (University of Oxford) and some utility functions to transform rasters to data frames and vice versa.
+**Disclaimer 2**: The analysis is not entirely reproducible (using only the files in the github repo) using only the data and code in this repo, as it relies on some large data or packages that could not be included here. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (outputted data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
 
 # Folder structure
 Overview of project files and folders:
@@ -51,6 +51,223 @@ Same as for `bayes-hopt-multi-class`, only that the multivariate data are modele
 
 - **`multi-mars.R`**
 This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `mmars-model`.
+
+# Directory Tree of the files contained in the repo
+```
+**REPO**
++-- multi-species-models
+|   +-- auxiliary-scripts
+|   |   +-- data-preprocessing-species.R
+|   |   +-- data-preprocessing.R
+|   |   \-- formulae.R
+|   +-- bayes-hopt-multi-class.R
+|   +-- bayes-hopt-multivariate.R
+|   +-- data
+|   |   \-- full-model-list.rds
+|   +-- mmars-model
+|   |   \-- performance-results
+|   |       \-- results-MMARS-doi-2020-10-08-1744.rds
+|   +-- multi-class model
+|   |   +-- bayesian-optimization-results
+|   |   |   +-- bhopt-multi-softmax-results-deep.rds
+|   |   |   +-- bhopt-multi-softmax-results-smooth-deep.rds
+|   |   |   \-- bhopt-multi-softmax-results-smooth.rds
+|   |   \-- performance-results
+|   |       +-- brier-simus-MC-auc-none-deep-2020-10-08-1752.rds
+|   |       +-- brier-simus-MC-auc-none-smooth-2020-10-08-1611.rds
+|   |       +-- brier-simus-MC-auc-none-smooth-deep-2020-10-08-1608.rds
+|   |       +-- simu-runs-multi-softmax-auc-none-deep-2020-10-01-0238.rds
+|   |       +-- simu-runs-multi-softmax-auc-none-smooth-2020-10-01-0228.rds
+|   |       \-- simu-runs-multi-softmax-auc-none-smooth-deep-2020-10-04-0208.rds
+|   +-- multi-mars.R
+|   +-- multivariate-model
+|   |   +-- bayesian-optimization-results
+|   |   |   +-- bhopt-multi-results-deep.rds
+|   |   |   +-- bhopt-multi-results-smooth-deep.rds
+|   |   |   \-- bhopt-multi-results-smooth.rds
+|   |   \-- performance-results
+|   |       +-- brier-simus-MR-auc-none-deep-2020-10-08-1524.rds
+|   |       +-- brier-simus-MR-auc-none-smooth-2020-10-08-1535.rds
+|   |       +-- brier-simus-MR-auc-none-smooth-deep-2020-10-08-1528.rds
+|   |       +-- simu-runs-multi-auc-none-deep-2020-10-01-0231.rds
+|   |       +-- simu-runs-multi-auc-none-smooth-2020-10-01-0224.rds
+|   |       \-- simu-runs-multi-auc-none-smooth-deep-2020-10-04-0157.rds
+|   +-- repo
+|   |   +-- deepregression-master
+|   |   |   \-- README.md
+|   |   \-- mastergrids
+|   |       \-- README.md
+|   \-- temp
+|       \-- placeholderfile.txt
++-- pooled-models
+|   +-- auxiliary-scripts
+|   |   +-- data-preprocessing-species.R
+|   |   +-- data-preprocessing.R
+|   |   \-- formulae.R
+|   +-- bayes-hopt-pooled.R
+|   +-- bayesian-optimization-results
+|   |   +-- bayes-opt-results-pooled-deep.rds
+|   |   +-- bayes-opt-results-pooled-smooth-deep.rds
+|   |   \-- bayes-opt-results-pooled-smooth.rds
+|   +-- data
+|   |   +-- full-model-list.rds
+|   |   \-- raw-data
+|   |       +-- countries.Rds
+|   |       +-- env_grids.grd
+|   |       +-- env_grids.gri
+|   |       \-- folds_list_vector_presence.Rds
+|   +-- full-model-datagen.R
+|   +-- performance-results
+|   |   +-- brier-simus-pooled-deep-2020-10-09-0246.rds
+|   |   +-- brier-simus-pooled-smooth-2020-10-13-1429.rds
+|   |   +-- brier-simus-pooled-smooth-deep-2020-10-13-2332.rds
+|   |   +-- simu-runs-pooled-deep-2020-10-09-0246.rds
+|   |   +-- simu-runs-pooled-smooth-2020-10-13-1429.rds
+|   |   \-- simu-runs-pooled-smooth-deep-2020-10-13-2332.rds
+|   +-- repo
+|   |   +-- deepregression-master
+|   |   |   \-- README.md
+|   |   \-- mastergrids
+|   |       \-- README.md
+|   \-- temp
+|       \-- placeholderfile.txt
++-- README.md
+\-- single-species-models
+    +-- auxiliary-scripts
+    |   +-- data-preprocessing.R
+    |   \-- formulae.R
+    +-- bayes-hopt-single.R
+    +-- bayesian-optimization
+    |   +-- pmegistus
+    |   |   \-- results
+    |   |       +-- bayesopt-results-pmegistus-deep-fixed.rds
+    |   |       +-- bayesopt-results-pmegistus-smooth-deep-fixed.rds
+    |   |       \-- bayesopt-results-pmegistus-smooth-fixed.rds
+    |   +-- tbarberi
+    |   |   \-- results
+    |   |       +-- bayesopt-results-tbarberi-deep-fixed.rds
+    |   |       +-- bayesopt-results-tbarberi-smooth-deep-fixed.rds
+    |   |       \-- bayesopt-results-tbarberi-smooth-fixed.rds
+    |   +-- tbrasiliensis
+    |   |   \-- results
+    |   |       +-- bayesopt-results-tbrasiliensis-deep-fixed.rds
+    |   |       +-- bayesopt-results-tbrasiliensis-smooth-deep-fixed.rds
+    |   |       \-- bayesopt-results-tbrasiliensis-smooth-fixed.rds
+    |   +-- tdimidiata
+    |   |   \-- results
+    |   |       +-- bayesopt-results-tdimidiata-deep-fixed.rds
+    |   |       +-- bayesopt-results-tdimidiata-smooth-deep-fixed.rds
+    |   |       \-- bayesopt-results-tdimidiata-smooth-fixed.rds
+    |   +-- tinfestans
+    |   |   \-- results
+    |   |       +-- bayesopt-results-tinfestans-deep-fixed.rds
+    |   |       +-- bayesopt-results-tinfestans-smooth-deep-fixed.rds
+    |   |       \-- bayesopt-results-tinfestans-smooth-fixed.rds
+    |   +-- tpseudomaculata
+    |   |   \-- results
+    |   |       +-- bayesopt-results-tpseudomaculata-deep-fixed.rds
+    |   |       +-- bayesopt-results-tpseudomaculata-smooth-deep-fixed.rds
+    |   |       \-- bayesopt-results-tpseudomaculata-smooth-fixed.rds
+    |   \-- tsordida
+    |       \-- results
+    |           +-- bayesopt-results-tsordida-deep-fixed.rds
+    |           +-- bayesopt-results-tsordida-smooth-deep-fixed.rds
+    |           \-- bayesopt-results-tsordida-smooth-fixed.rds
+    +-- benchmarks-single.R
+    +-- data
+    |   +-- pmegistus.rds
+    |   +-- raw-data
+    |   |   +-- countries.Rds
+    |   |   +-- env_grids.grd
+    |   |   +-- env_grids.gri
+    |   |   \-- folds_list_vector_presence.Rds
+    |   +-- tbarberi.rds
+    |   +-- tbrasiliensis.rds
+    |   +-- tdimidiata.rds
+    |   +-- tinfestans.rds
+    |   +-- tpseudomaculata.rds
+    |   \-- tsordida.rds
+    +-- effect-curves-single-species.R
+    +-- performance-results
+    |   +-- simu-runs-pmegistus-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-pmegistus-smooth-2021-07-14-1505.rds
+    |   +-- simu-runs-pmegistus-smooth-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tbarberi-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tbarberi-smooth-2021-07-14-1505.rds
+    |   +-- simu-runs-tbarberi-smooth-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tbrasiliensis-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tbrasiliensis-smooth-2021-07-14-1505.rds
+    |   +-- simu-runs-tbrasiliensis-smooth-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tdimidiata-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tdimidiata-smooth-2021-07-14-1505.rds
+    |   +-- simu-runs-tdimidiata-smooth-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tinfestans-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tinfestans-smooth-2021-07-14-1505.rds
+    |   +-- simu-runs-tinfestans-smooth-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tpseudomaculata-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tpseudomaculata-smooth-2021-07-14-1505.rds
+    |   +-- simu-runs-tpseudomaculata-smooth-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tsordida-deep-2021-07-14-1505.rds
+    |   +-- simu-runs-tsordida-smooth-2021-07-14-1505.rds
+    |   \-- simu-runs-tsordida-smooth-deep-2021-07-14-1505.rds
+    +-- performance-results-single-species.R
+    +-- plot-results
+    |   +-- partial-effects
+    |   |   \-- pmegistus
+    |   |       +-- effect-curves-pmeg-accessibility.png
+    |   |       +-- effect-curves-pmeg-elevation.png
+    |   |       +-- effect-curves-pmeg-landcover08.png
+    |   |       +-- effect-curves-pmeg-landcover09.png
+    |   |       +-- effect-curves-pmeg-landcover10.png
+    |   |       +-- effect-curves-pmeg-landcover12.png
+    |   |       +-- effect-curves-pmeg-landcover13.png
+    |   |       +-- effect-curves-pmeg-landcover14.png
+    |   |       +-- effect-curves-pmeg-lst_day.png
+    |   |       +-- effect-curves-pmeg-lst_diff.png
+    |   |       +-- effect-curves-pmeg-lst_night.png
+    |   |       +-- effect-curves-pmeg-nighttimelights.png
+    |   |       +-- effect-curves-pmeg-population.png
+    |   |       +-- effect-curves-pmeg-rainfall.png
+    |   |       +-- effect-curves-pmeg-reflectance_evi.png
+    |   |       +-- effect-curves-pmeg-reflectance_tcb.png
+    |   |       +-- effect-curves-pmeg-reflectance_tcw.png
+    |   |       +-- effect-curves-pmeg-slope.png
+    |   |       \-- effect-curves-pmeg-urban.png
+    |   \-- sdm-plots
+    |       \-- deep
+    |           +-- pmeg-deep-mgcv.png
+    |           +-- sdm-map-gam-pmegistus-smooth.png
+    |           +-- sdm-map-gam-tbarberi-smooth.png
+    |           +-- sdm-map-gam-tbrasiliensis-smooth.png
+    |           +-- sdm-map-gam-tdimidiata-smooth.png
+    |           +-- sdm-map-gam-tinfestans-smooth.png
+    |           +-- sdm-map-gam-tpseudomaculata-smooth.png
+    |           +-- sdm-map-gam-tsordida-smooth.png
+    |           +-- sdm-map-ssdr-pmegistus.png
+    |           +-- sdm-map-ssdr-tbarberi.png
+    |           +-- sdm-map-ssdr-tbrasiliensis.png
+    |           +-- sdm-map-ssdr-tdimidiata.png
+    |           +-- sdm-map-ssdr-tinfestans.png
+    |           +-- sdm-map-ssdr-tpseudomaculata.png
+    |           +-- sdm-map-ssdr-tsordida.png
+    |           +-- tbarb-deep-mgcv.png
+    |           +-- tbras-deep-mgcv.png
+    |           +-- tdimi-deep-mgcv.png
+    |           +-- tinf-deep-mgcv.png
+    |           +-- tpseudo-deep-mgcv.png
+    |           \-- tsord-deep-mgcv.png
+    +-- plots-single-species.R
+    +-- repo
+    |   +-- deepregression-master
+    |   |   \-- README.md
+    |   +-- mastergrids
+    |   |   \-- README.md
+    |   \-- Miniconda setup.txt
+    \-- temp
+        \-- placeholderfile.txt
+
+```
+
 
 # Exemplary Set-Up
 
