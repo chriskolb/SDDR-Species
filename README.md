@@ -2,7 +2,7 @@
 
 This repository contains code and data for the analysis of multiple <em>triatomine</em> species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. 
 
-## This is the single-species data
+## This is the Data
 
 The following table describes the constitution of the seven single-species data sets, showing 7,541 unique presence locations of one of the seven modeled species. Due to the target-group background approach, the absences of a species are drawn from the presence location of other species, preferably with similar sampling intensity. There are 3,759 "true" pseudo-absences in the data, i.e. presence locations of an unmodeled species. In total, the data contains 11,300 unique observations. Because presence points of a modeled species can also appear as pseudo-absences in other species data sets, duplicates inflate the total number of instances over all single-species data sets to 30,460. 
 
@@ -21,8 +21,10 @@ The following table describes the constitution of the seven single-species data 
  The following map illustrates the geographical distribution of triatomine vector species occurences, colored by species:
  
 <p align="left">
-<img align="left" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="650"/> 
+<img align="left" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="750"/> 
 </p>
+
+
 
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models (hence syntax might differ). Figuring out the right set-up and dependencies to run the code can be tedious.
 
