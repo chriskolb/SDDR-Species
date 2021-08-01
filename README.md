@@ -71,8 +71,8 @@ This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and M
 This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). The plots show three models: The output can be found in folder `single-species-models/plot-results/partial-effects`.
 
 <p float="center">
-  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="400" />
-  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="400" /> 
+  <img src="single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="400" />
+  <img src="single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="400" /> 
 </p>
 
 The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only structured smooth effect terms, and an SDDR model (2) with both structured and and a DNN effect. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
@@ -81,7 +81,7 @@ The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR mod
 
 This script produces the predictive distribution maps for the modeled vector species obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here. Output of the script can be found in `single-species-models/plot-results/sdm-plots`.
 
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png" alt="drawing" width="800"/>
+<img src="single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png" alt="drawing" width="800"/>
 
 The figure above shows predictive distribution maps for the vector species *Triatoma infestans* obtained through SDDR (left) or an `mgcv` GAM (right).
 
@@ -146,7 +146,7 @@ Same as for `bayes-hopt-multi-class`, only that the multivariate data are modele
 This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `multi-species/models/mmars-model`.
 
 
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/readme-files/multi-res-github.png" alt="drawing" width="1100"/>
+<img src="readme-files/multi-res-github.png" alt="drawing" width="1100"/>
 
 
 
