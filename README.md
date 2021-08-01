@@ -19,42 +19,24 @@ The following table describes the constitution of the seven single-species data 
  
  For the single-species SDDR models and competing benchmarks, the following results were obtained:
  
-| **SS Test AUC**   | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM (mgcv)** | **MaxEnt (maxnet)** | **Bender et al.** |
-|-------------------|----------------|----------------|--------------------|----------------|---------------------|-------------------|
-|                   |       (1)      |       (2)      |         (3)        |       (4)      |         (6)         |        (7)        |
-| T. Infestans      |      0.965     |    **0.977**   |        0.976       |      0.970     |        0.973        |        0.96       |
-|                   |     (1 e-6)    |     (3 e-3)    |       (2 e-3)      |     (0.00)     |        (0.00)       |                   |
-| T. Dimidiata      |      0.925     |      0.960     |        0.962       |    **0.963**   |        0.946        |        0.97       |
-|                   |     (3 e-3)    |     (2 e-3)    |       (1 e-3)      |     (0.00)     |        (0.00)       |                   |
-| P.Megistus        |      0.819     |      0.828     |      **0.830**     |      0.827     |        0.821        |        0.83       |
-|                   |     (1 e-4)    |     (2 e-3)    |       (2 e-3)      |     (0.00)     |        (0.00)       |                   |
-| T. Brasiliensis   |      0.674     |      0.690     |        0.682       |    **0.694**   |        0.666        |        0.69       |
-|                   |     (1 e-4)    |     (5 e-3)    |       (8 e-3)      |     (0.00)     |        (0.00)       |                   |
-| T. Sordida        |      0.827     |    **0.838**   |        0.830       |      0.826     |        0.803        |        0.83       |
-|                   |     (2 e-3)    |     (5 e-3)    |       (7 e-3)      |     (0.00)     |        (0.00)       |                   |
-| T. Pseudomaculata |      0.692     |      0.724     |        0.709       |      0.725     |      **0.741**      |        0.73       |
-|                   |     (3 e-3)    |     (4 e-3)    |       (1 e-2)      |     (0.00)     |        (0.00)       |                   |
-| T. Barberi        |      0.867     |      0.862     |        0.867       |    **0.873**   |        0.858        |        0.88       |
-|                   |     (5 e-4)    |     (7 e-3)    |       (1 e-2)      |     (0.00)     |        (0.00)       |                   |
-
-| **SS Test AUC**   | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM (mgcv)** | **MaxEnt (maxnet)** | **Bender et al.** |
-|-------------------|----------------|----------------|--------------------|----------------|---------------------|-------------------|
-|                   | (1)            | (2)            | (3)                | (4)            | (6)                 | (7)               |
-| T. Infestans      | 0.965          | **0.977**      | 0.976              | 0.970          | 0.973               | 0.96              |
-|                   | (1 e-6)        | (3 e-3)        | (2 e-3)            | (0.00)         | (0.00)              |                   |
-| T. Dimidiata      | 0.925          | 0.960          | 0.962              | **0.963**      | 0.946               | 0.97              |
-|                   | (3 e-3)        | (2 e-3)        | (1 e-3)            | (0.00)         | (0.00)              |                   |
-| P.Megistus        | 0.819          | 0.828          | **0.830**          | 0.827          | 0.821               | 0.83              |
-|                   | (1 e-4)        | (2 e-3)        | (2 e-3)            | (0.00)         | (0.00)              |                   |
-| T. Brasiliensis   | 0.674          | 0.690          | 0.682              | **0.694**      | 0.666               | 0.69              |
-|                   | (1 e-4)        | (5 e-3)        | (8 e-3)            | (0.00)         | (0.00)              |                   |
-| T. Sordida        | 0.827          | **0.838**      | 0.830              | 0.826          | 0.803               | 0.83              |
-|                   | (2 e-3)        | (5 e-3)        | (7 e-3)            | (0.00)         | (0.00)              |                   |
-| T. Pseudomaculata | 0.692          | 0.724          | 0.709              | 0.725          | **0.741**           | 0.73              |
-|                   | (3 e-3)        | (4 e-3)        | (1 e-2)            | (0.00)         | (0.00)              |                   |
-| T. Barberi        | 0.867          | 0.862          | 0.867              | **0.873**      | 0.858               | 0.88              |
-|                   | (5 e-4)        | (7 e-3)        | (1 e-2)            | (0.00)         | (0.00)              |                   |
-
+ 
+|  **SS Test AUC** | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM   (mgcv)** | **MaxEnt (maxnet)**  | **Bender et al.** |
+|:----------------:|:--------------:|:--------------:|:------------------:|:----------------:|:--------------------:|:-----------------:|
+|                  |       (1)      |       (2)      |         (3)        |        (4)       |          (6)         |        (7)        |
+|   T. Infestans   |      0.965     |    **0.977**   |        0.976       |       0.970      |         0.973        |        0.96       |
+|                  |     (1 e-6)    |     (3 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
+|    T.Dimidiata   |      0.925     |      0.960     |        0.962       |     **0.963**    |         0.946        |        0.97       |
+|                  |     (3 e-3)    |     (2 e-3)    |       (1 e-3)      |      (0.00)      |        (0.00)        |                   |
+|    P.Megistus    |      0.819     |      0.828     |      **0.830**     |       0.827      |         0.821        |        0.83       |
+|                  |     (1 e-4)    |     (2 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
+|  T.Brasiliensis  |      0.674     |      0.690     |        0.682       |     **0.694**    |         0.666        |        0.69       |
+|                  |     (1 e-4)    |     (5 e-3)    |       (8 e-3)      |      (0.00)      |        (0.00)        |                   |
+|    T. Sordida    |      0.827     |    **0.838**   |        0.830       |       0.826      |         0.803        |        0.83       |
+|                  |     (2 e-3)    |     (5 e-3)    |       (7 e-3)      |      (0.00)      |        (0.00)        |                   |
+|   T.Pseudomac.   |      0.692     |      0.724     |        0.709       |       0.725      |       **0.741**      |        0.73       |
+|                  |     (3 e-3)    |     (4 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
+|     T.Barberi    |      0.867     |      0.862     |        0.867       |     **0.873**    |         0.858        |        0.88       |
+|                  |     (5 e-4)    |     (7 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
 
 
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models. Figuring out the right set-up and dependencies to run the code can be tedious.
