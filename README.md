@@ -44,7 +44,7 @@ This script takes the pre-computed optimal hyperparameters in the `ParBayesianOp
 This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). Combining the output of both R scripts **`performance-results-single-species.R`** and **`benchmarks-single.R`** 
 
 | **Single-Species**<br>**Test AUC** | **SDDR<br>(Add only)** | **SDDR<br>(DNN only)** | **SDDR<br>(Addit+DNN)** | **GAM**<br>(mgcv) | **XGBoost** | **MaxEnt**<br>(maxnet) | **Bender et al.** |
-|:----------------------------------:|:----------------------:|:----------------------:|:-----------------------:|:-----------------:|:-----------:|------------------------|-------------------|
+|:----------------------------------:|:----------------------:|:----------------------:|:-----------------------:|:-----------------:|:-----------:|:----------------------:|:-----------------:|
 |                                    |           (1)          |           (2)          |           (3)           |        (4)        |     (5)     |           (6)          |        (7)        |
 | T. Infestans                       |          0.965         |        **0.977**       |          0.976          |       0.970       |    0.973    |          0.973         |        0.96       |
 |                                    |         (1 e-6)        |         (3 e-3)        |         (2 e-3)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
@@ -60,7 +60,6 @@ This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and M
 |                                    |         (3 e-3)        |         (4 e-3)        |         (1 e-2)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
 | T. Barberi                         |          0.867         |          0.862         |          0.867          |     **0.873**     |    0.870    |          0.858         |        0.88       |
 |                                    |         (5 e-4)        |         (7 e-3)        |         (1 e-2)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
-
 
 - **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
 
