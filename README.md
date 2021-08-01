@@ -20,9 +20,9 @@ The following table describes the constitution of the seven single-species data 
  
  The following map illustrates the geographical distribution of triatomine vector species occurences, colored by species:
  
- <p align="left">
-<img align="left" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="600"/> 
- </p>
+<p align="left">
+<img align="left" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="650"/> 
+</p>
 
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models (hence syntax might differ). Figuring out the right set-up and dependencies to run the code can be tedious.
 
@@ -66,8 +66,8 @@ This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and M
 This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). The plots show three models: The output can be found in folder `single-species-models/plot-results/partial-effects`.
 
 <p float="center">
-  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="450" />
-  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="450" /> 
+  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="400" />
+  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="400" /> 
 </p>
 
 The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only structured smooth effect terms, and an SDDR model (2) with both structured and and a DNN effect. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
