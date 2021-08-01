@@ -24,7 +24,7 @@ The following table describes the constitution of the seven single-species data 
  The following map illustrates the geographical distribution of triatomine vector species occurences, colored by species:
  
 <p align="left">
-<img align="center" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="500"/> 
+<img align="center" src="single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="500"/> 
 </p>
 
 
