@@ -158,8 +158,8 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 |   |   +-------------------- data-preprocessing-species.R
 |   |   +-------------------- data-preprocessing.R
 |   |   \-------------------- formulae.R
-|   +------------------------------------------------------------------------------------ bayes-hopt-multi-class.R
-|   +------------------------------------------------------------------------------------ bayes-hopt-multivariate.R
+|   +----------------------------------------------------------------------- bayes-hopt-multi-class.R
+|   +----------------------------------------------------------------------- bayes-hopt-multivariate.R
 |   +-- data
 |   |   \-- full-model-list.rds
 |   +-- mmars-model
@@ -202,7 +202,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 |   |   +-------------------- data-preprocessing-species.R
 |   |   +-------------------- data-preprocessing.R
 |   |   \-------------------- formulae.R
-|   +------------------------------------------------------------------------------------ bayes-hopt-pooled.R
+|   +------------------------------------------------------------------------- bayes-hopt-pooled.R
 |   +-- bayesian-optimization-results
 |   |   +-- bayes-opt-results-pooled-deep.rds
 |   |   +-- bayes-opt-results-pooled-smooth-deep.rds
@@ -214,7 +214,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 |   |       +-- env_grids.grd
 |   |       +-- env_grids.gri
 |   |       \-- folds_list_vector_presence.Rds
-|   +-------------------------------------------------------------------------------------- full-model-datagen.R
+|   +-------------------------------------------------------------------------- full-model-datagen.R
 |   +-- performance-results
 |   |   +-- brier-simus-pooled-deep-2020-10-09-0246.rds
 |   |   +-- brier-simus-pooled-smooth-2020-10-13-1429.rds
@@ -234,7 +234,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     +-- auxiliary-scripts
     |   +-- data-preprocessing.R
     |   \-- formulae.R
-    +------------------------------------------------------------------------------------ bayes-hopt-single.R
+    +----------------------------------------------------------------------------- bayes-hopt-single.R
     +-- bayesian-optimization
     |   +-- pmegistus
     |   |   \-- results
@@ -271,7 +271,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     |           +-- bayesopt-results-tsordida-deep-fixed.rds
     |           +-- bayesopt-results-tsordida-smooth-deep-fixed.rds
     |           \-- bayesopt-results-tsordida-smooth-fixed.rds
-    +------------------------------------------------------------------------------------ benchmarks-single.R
+    +---------------------------------------------------------------------------------- benchmarks-single.R
     +-- data
     |   +-- pmegistus.rds
     |   +-- raw-data
@@ -285,7 +285,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     |   +-- tinfestans.rds
     |   +-- tpseudomaculata.rds
     |   \-- tsordida.rds
-    +--------------------------------------------------------------------------- effect-curves-single-species.R
+    +---------------------------------------------------------------------- effect-curves-single-species.R
     +-- performance-results
     |   +-- simu-runs-pmegistus-deep-2021-07-14-1505.rds
     |   +-- simu-runs-pmegistus-smooth-2021-07-14-1505.rds
@@ -308,7 +308,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     |   +-- simu-runs-tsordida-deep-2021-07-14-1505.rds
     |   +-- simu-runs-tsordida-smooth-2021-07-14-1505.rds
     |   \-- simu-runs-tsordida-smooth-deep-2021-07-14-1505.rds
-    +-------------------------------------------------------------------------- performance-results-single-species.R
+    +---------------------------------------------------------------- performance-results-single-species.R
     +-- plot-results
     |   +-- partial-effects
     |   |   \-- pmegistus
@@ -354,7 +354,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
     |           +-- tinf-deep-mgcv.png
     |           +-- tpseudo-deep-mgcv.png
     |           \-- tsord-deep-mgcv.png
-    +------------------------------------------------------------------------------------- plots-single-species.R
+    +-------------------------------------------------------------------------- plots-single-species.R
     +-- repo
     |   +-- deepregression-master
     |   |   
