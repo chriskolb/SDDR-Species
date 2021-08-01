@@ -44,16 +44,32 @@ This script takes the pre-computed optimal hyperparameters in the `ParBayesianOp
 
 This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). Combining the output of both R scripts **`performance-results-single-species.R`** and **`benchmarks-single.R`** 
 
+|  **SS Test AUC** | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM   (mgcv)** | **MaxEnt (maxnet)**  | **Bender et al.** |
+|:----------------:|:--------------:|:--------------:|:------------------:|:----------------:|:--------------------:|:-----------------:|
+|                  |       (1)      |       (2)      |         (3)        |        (4)       |          (6)         |        (7)        |
+|   T. Infestans   |      0.965     |    **0.977**   |        0.976       |       0.970      |         0.973        |        0.96       |
+|                  |     (1 e-6)    |     (3 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
+|    T.Dimidiata   |      0.925     |      0.960     |        0.962       |     **0.963**    |         0.946        |        0.97       |
+|                  |     (3 e-3)    |     (2 e-3)    |       (1 e-3)      |      (0.00)      |        (0.00)        |                   |
+|    P.Megistus    |      0.819     |      0.828     |      **0.830**     |       0.827      |         0.821        |        0.83       |
+|                  |     (1 e-4)    |     (2 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
+|  T.Brasiliensis  |      0.674     |      0.690     |        0.682       |     **0.694**    |         0.666        |        0.69       |
+|                  |     (1 e-4)    |     (5 e-3)    |       (8 e-3)      |      (0.00)      |        (0.00)        |                   |
+|    T. Sordida    |      0.827     |    **0.838**   |        0.830       |       0.826      |         0.803        |        0.83       |
+|                  |     (2 e-3)    |     (5 e-3)    |       (7 e-3)      |      (0.00)      |        (0.00)        |                   |
+|   T.Pseudomac.   |      0.692     |      0.724     |        0.709       |       0.725      |       **0.741**      |        0.73       |
+|                  |     (3 e-3)    |     (4 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
+|     T.Barberi    |      0.867     |      0.862     |        0.867       |     **0.873**    |         0.858        |        0.88       |
+|                  |     (5 e-4)    |     (7 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
+
 
 - **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
 
 This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder `plot-results`.
 
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/merge-4.png" alt="drawing" width="800"/>
-
 <p float="left">
-  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="450" />
-  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="450" /> 
+  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="400" />
+  <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="400" /> 
 </p>
 
 The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only smooth effect terms, and an SDDR model (2) with both, structured and DNN effects. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
