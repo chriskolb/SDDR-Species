@@ -33,15 +33,15 @@ Overview of project files and folders:
 
 ## single-species-models
 
-This folder contains the necessary code for the single-species SDDR models, plots, as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts below.
+This folder contains the necessary code for the single-species SDDR models, plots, as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization hyperparameters, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts following below.
 
 - **`performance-results-single-species.R`**  (runtime: **some hours** on LEQR server)
 
-This script takes the pre-computed optimal hyperparameters in the `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final performance results. Output is in folder `performance-results`.
+This script takes the optimized hyperparameters in the `ParBayesianOptimization` objects from the folder `bayesian-optimization` and trains SDDR models for each species and predictor type ten times using random weight initializations to produce the final AUC and Brier performance results. Output is in folder `performance-results`.
 
 - **`benchmarks-single.R`** (runtime: **some minutes** on LEQR server)
 
-This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). Combining the output of both R scripts **`performance-results-single-species.R`** and **`benchmarks-single.R`** 
+This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). Combining the output of both R scripts **`performance-results-single-species.R`** and **`benchmarks-single.R`** yields the following table:
 
 | **Single-Species**<br>**Test AUC** | **SDDR<br>(Add only)** | **SDDR<br>(DNN only)** | **SDDR<br>(Addit+DNN)** | **GAM**<br>(mgcv) | **XGBoost** | **MaxEnt**<br>(maxnet) | **Bender et al.** |
 |:----------------------------------:|:----------------------:|:----------------------:|:-----------------------:|:-----------------:|:-----------:|:----------------------:|:-----------------:|
@@ -63,28 +63,28 @@ This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and M
 
 - **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
 
-This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder `plot-results`.
+This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). The plots show three models: The output can be found in folder `single-species-models/plot-results/partial-effects`.
 
-<p float="left">
+<p float="center">
   <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="300" />
   <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="300" /> 
 </p>
 
-The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only smooth effect terms, and an SDDR model (2) with both, structured and DNN effects. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
+The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only structured smooth effect terms, and an SDDR model (2) with both structured and and a DNN effect. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
 
 - **`plots-single-species.R`** (runtime: **several hours** on LEQR server)
 
-This script produces the predictive maps obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here.
+This script produces the predictive distribution maps for the modeled vector species obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here. Output of the script can be found in `single-species-models/plot-results/sdm-plots`.
 
 <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png" alt="drawing" width="800"/>
 
-The figure above shows predictive distribution maps for the vector species *Triatoma infestans* obtained through SDDR (left) or an `mgcv` GAM.
+The figure above shows predictive distribution maps for the vector species *Triatoma infestans* obtained through SDDR (left) or an `mgcv` GAM (right).
 
-- **`bayes-hopt-single.R`** (runtime: **2-3 weeks** on LEQR server)
+- [**`bayes-hopt-single.R`** (runtime: **2-3 weeks** on LEQR server)]
 
-This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results **(runs for 7+ days!)**. Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. **Results will thus differ**. 
+This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types in the single-species setting. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results **(runs for 7+ days!)**. Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. **Results will thus differ**. 
 
-To re-run the thesis single-species AUC and Brier results with pre-computed `ParBayesianOptimization` objects (same as results in thesis), you need to run **`performance-results-single-species.R`**. The script **`bayes-hopt-single.R`** is actually not directly used in any of the thesis' analasyses and is included here mainly because it is the complementary single-species version to the scripts **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models`. I only started using consolidated scripts with neverending loops after already having obtained the single-species model results. 
+To re-run the thesis single-species AUC and Brier results with the pre-computed `ParBayesianOptimization` objects (same as results in thesis), you need to run **`performance-results-single-species.R`**. The script **`bayes-hopt-single.R`** is actually not directly used in any of the thesis' analasyses and is included here mainly because it is the complementary single-species version to the scripts **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models`. I only started using consolidated large scripts looping over species and predictor types after already having obtained the single-species model results. 
 
 ## pooled-models 
 
@@ -92,11 +92,11 @@ This folder contains the necessary code for the pooled SDDR models. Nested folde
 
 - **`bayes-hopt-pooled.R`** (runtime: **several days** on LEQR server)
 
-This script performs Bayesian Hyperparameter Optimization for all three predictor types (smooth, deep, smooth+deep). Subsequently, the models are estimated ten times using random initialization of weights to produce the final results. The folder `bayesian-optimization-results` contains the resulting `ParBayesianOptimization` objects and the folder `performance-results` the respective AUC and Brier scores. Also runs for several days.
+This script performs Bayesian Hyperparameter Optimization for all three predictor types (smooth, deep, smooth+deep). Subsequently, the models are estimated ten times using random initialization of weights to produce the final averaged AUC and Brier score results. The folder `bayesian-optimization-results` contains the resulting `ParBayesianOptimization` hyperparameter objects and the folder `pooled-models/performance-results` the respective AUC and Brier scores. Also runs for several days.
 
 - **`full-model-datagen.R`** (runtime: **several minutes** on LEQR server)
 
-This script takes the raw species occurrence and environmental grid data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in `data` folder of pooled-models and multi-species-models) and generates spatially decorrelated cross-validation folds using  `blockCV`. Although the raw data is not included, the resulting data set is included.
+This script takes the raw species occurrence and environmental grid data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in `data` folder of pooled-models and multi-species-models), as well as generates spatially decorrelated cross-validation folds using  `blockCV`. Although the raw data is not included, the resulting data set is included in the `data`subfolders of the pooled and multi-species approaches.
 
 ## multi-species-models
 
