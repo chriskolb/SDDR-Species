@@ -9,13 +9,6 @@ rm(list=ls())
 # choose SDDR predictor
 preds.list <- c("deep", "smooth", "smooth-deep")
 
-# loop over predictor specifications
-
-#pred.type = "deep" # smooth, deep, smooth-deep
-
-for(pred.type in preds.list){
-
-
 # fixed number of epochs for optimization
 epochs.cv = 100
 
@@ -58,6 +51,10 @@ set.seed(seed)
 
 # timestap to name all output files
 timestamp <- format(Sys.time(), "%Y-%m-%d-%H%M")
+
+# loop over predictor specifications
+#pred.type = "deep" # smooth, deep, smooth-deep
+for(pred.type in preds.list){
 
 ################################################################################################
 ## load and prepare data #######################################################################
