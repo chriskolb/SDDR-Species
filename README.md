@@ -17,27 +17,10 @@ The following table describes the constitution of the seven single-species data 
  T. Barberi                  | 455                 | 2,161               | 2,616   
  Sum                         | 7,541               | 22,919              | 30,460  
  
- For the single-species SDDR models and competing benchmarks, the following results were obtained:
+ 
+<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="800"/> 
  
  
-|  **SS Test AUC** | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM   (mgcv)** | **MaxEnt (maxnet)**  | **Bender et al.** |
-|:----------------:|:--------------:|:--------------:|:------------------:|:----------------:|:--------------------:|:-----------------:|
-|                  |       (1)      |       (2)      |         (3)        |        (4)       |          (6)         |        (7)        |
-|   T. Infestans   |      0.965     |    **0.977**   |        0.976       |       0.970      |         0.973        |        0.96       |
-|                  |     (1 e-6)    |     (3 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
-|    T.Dimidiata   |      0.925     |      0.960     |        0.962       |     **0.963**    |         0.946        |        0.97       |
-|                  |     (3 e-3)    |     (2 e-3)    |       (1 e-3)      |      (0.00)      |        (0.00)        |                   |
-|    P.Megistus    |      0.819     |      0.828     |      **0.830**     |       0.827      |         0.821        |        0.83       |
-|                  |     (1 e-4)    |     (2 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
-|  T.Brasiliensis  |      0.674     |      0.690     |        0.682       |     **0.694**    |         0.666        |        0.69       |
-|                  |     (1 e-4)    |     (5 e-3)    |       (8 e-3)      |      (0.00)      |        (0.00)        |                   |
-|    T. Sordida    |      0.827     |    **0.838**   |        0.830       |       0.826      |         0.803        |        0.83       |
-|                  |     (2 e-3)    |     (5 e-3)    |       (7 e-3)      |      (0.00)      |        (0.00)        |                   |
-|   T.Pseudomac.   |      0.692     |      0.724     |        0.709       |       0.725      |       **0.741**      |        0.73       |
-|                  |     (3 e-3)    |     (4 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
-|     T.Barberi    |      0.867     |      0.862     |        0.867       |     **0.873**    |         0.858        |        0.88       |
-|                  |     (5 e-4)    |     (7 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
-
 
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models. Figuring out the right set-up and dependencies to run the code can be tedious.
 
@@ -57,12 +40,14 @@ This script takes the pre-computed optimal hyperparameters in the `ParBayesianOp
 
 - **`benchmarks-single.R`** (runtime: **some minutes** on LEQR server)
 
-This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). 
+This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). Combining the output of both R scripts **`performance-results-single-species.R`** and **`benchmarks-single.R`** 
 
 
 - **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
 
 This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). Output is in folder `plot-results`.
+
+<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/merge-4.png" alt="drawing" width="800"/>
 
 <p float="left">
   <img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="450" />
@@ -83,8 +68,7 @@ The figure above shows predictive distribution maps for the vector species *Tria
 
 This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types. Subsequently, the optimized model is randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results **(runs for 7+ days!)**. Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. **Results will thus differ**. 
 
-To re-run the thesis single-species AUC and Brier results with pre-computed `ParBayesianOptimization` objects (same as results in thesis), you rather want to run **`performance-results-single-species.R`**. The script **`bayes-hopt-single.R`** is actually not used in the thesis analasysis and is a mere addition. After having consolidated the separate R scripts for `pooled-models` and `multi-species-models` before obtaining their final results, the same was done for reasons of competeness for the single-species "broad" Bayesian optimization and subsequent model scoring using AUC and Brier scores.
-
+To re-run the thesis single-species AUC and Brier results with pre-computed `ParBayesianOptimization` objects (same as results in thesis), you need to run **`performance-results-single-species.R`**. The script **`bayes-hopt-single.R`** is actually **not** used in any of the thesis analasyses and is here included mainly because it is very generally written and the complementary single-species version to the scripts **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models`. I only started using consolidated scripts with neverending loops after having finished the single-species models. 
 
 After having consolidated the predictor-specific multivariate models scripts that perform costly Bayesian Optimization and Model evaluation into one large script that loops over predictor types (or species), an equivalent script was written for the singles-epcies models, although at that point the results for the single-species were already obtaind. Hence this script should be regarded as a helpful complement to **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models`, bedies not being used for the actual analysis in the thesis. 
 
