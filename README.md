@@ -21,7 +21,7 @@ The following table describes the constitution of the seven single-species data 
  The following map illustrates the geographical distribution of triatomine vector species occurences, colored by species:
  
  <p align="left">
-<img align="left" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="500"/> 
+<img align="left" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="550"/> 
  </p>
 
 **Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models (hence syntax might differ). Figuring out the right set-up and dependencies to run the code can be tedious.
