@@ -10,7 +10,7 @@ species.list <- c("tinfestans", "tdimidiata", "pmegistus", "tbrasiliensis", "tso
 spec = "pmegistus"
 
 # define SDDR predictor list
-preds.list <- c("smooth", "deep", "smooth-deep")
+#preds.list <- c("smooth", "deep", "smooth-deep")
 pr = "smooth"
 
 # fixed number of epochs for optimization
