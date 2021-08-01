@@ -96,7 +96,7 @@ for(doi in doirange){
    colnames(pred) <- insample.species
    
    # compute AUC and Brier score on test data of species
-   auc.spec <- AUC(y_pred = pred[,spec], y_true = y.test[,spec])
+   auc.spec <- MLmetrics::AUC(y_pred = pred[,spec], y_true = y.test[,spec])
    brier.spec <- BrierScore(resp = y.test[,spec], pred = pred[,spec])
    
    cat("AUC for this species and doi =", doi, "is = ", auc.spec, "\n")
