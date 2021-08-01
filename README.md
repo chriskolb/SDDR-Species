@@ -6,6 +6,8 @@ This repository contains code and data for the analysis of multiple <em>triatomi
 
 The following table describes the constitution of the seven single-species data sets, showing 7,541 unique presence locations of one of the seven modeled species. Due to the target-group background approach, the absences of a species are drawn from the presence location of other species, preferably with similar sampling intensity. There are 3,759 "true" pseudo-absences in the data, i.e. presence locations of an unmodeled species. In total, the data contains 11,300 unique observations. Because presence points of a modeled species can also appear as pseudo-absences in other species data sets, duplicates inflate the total number of instances over all single-species data sets to 30,460. 
 
+<center>
+
  **Single-Species Datasets** | **presence points** | **pseudo-absences** | **Sum** 
 -----------------------------|---------------------|---------------------|---------
  T. Infestans                | 2,499               | 4,458               | 6,957   
@@ -17,11 +19,12 @@ The following table describes the constitution of the seven single-species data 
  T. Barberi                  | 455                 | 2,161               | 2,616   
  Sum                         | 7,541               | 22,919              | 30,460  
  
+ </center>
  
  The following map illustrates the geographical distribution of triatomine vector species occurences, colored by species:
  
-<p align="left">
-<img align="left" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="750"/> 
+<p align="center">
+<img align="center" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="500"/> 
 </p>
 
 
