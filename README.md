@@ -20,7 +20,7 @@ The following table describes the constitution of the seven single-species data 
  
  Next, we can see the geographical distribution of triatomine vector species occurences, colored by species:
  
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="570"/> 
+<img align="center" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="550"/> 
  
  
 
@@ -43,23 +43,23 @@ This script takes the pre-computed optimal hyperparameters in the `ParBayesianOp
 
 This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and MaxEnt). Combining the output of both R scripts **`performance-results-single-species.R`** and **`benchmarks-single.R`** 
 
-|  **SS Test AUC** | **SDDR (Add)** | **SDDR (DNN)** | **SDDR (Add+DNN)** | **GAM   (mgcv)** | **MaxEnt (maxnet)**  | **Bender et al.** |
-|:----------------:|:--------------:|:--------------:|:------------------:|:----------------:|:--------------------:|:-----------------:|
-|                  |       (1)      |       (2)      |         (3)        |        (4)       |          (6)         |        (7)        |
-|   T. Infestans   |      0.965     |    **0.977**   |        0.976       |       0.970      |         0.973        |        0.96       |
-|                  |     (1 e-6)    |     (3 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
-|    T.Dimidiata   |      0.925     |      0.960     |        0.962       |     **0.963**    |         0.946        |        0.97       |
-|                  |     (3 e-3)    |     (2 e-3)    |       (1 e-3)      |      (0.00)      |        (0.00)        |                   |
-|    P.Megistus    |      0.819     |      0.828     |      **0.830**     |       0.827      |         0.821        |        0.83       |
-|                  |     (1 e-4)    |     (2 e-3)    |       (2 e-3)      |      (0.00)      |        (0.00)        |                   |
-|  T.Brasiliensis  |      0.674     |      0.690     |        0.682       |     **0.694**    |         0.666        |        0.69       |
-|                  |     (1 e-4)    |     (5 e-3)    |       (8 e-3)      |      (0.00)      |        (0.00)        |                   |
-|    T. Sordida    |      0.827     |    **0.838**   |        0.830       |       0.826      |         0.803        |        0.83       |
-|                  |     (2 e-3)    |     (5 e-3)    |       (7 e-3)      |      (0.00)      |        (0.00)        |                   |
-|   T.Pseudomac.   |      0.692     |      0.724     |        0.709       |       0.725      |       **0.741**      |        0.73       |
-|                  |     (3 e-3)    |     (4 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
-|     T.Barberi    |      0.867     |      0.862     |        0.867       |     **0.873**    |         0.858        |        0.88       |
-|                  |     (5 e-4)    |     (7 e-3)    |       (1 e-2)      |      (0.00)      |        (0.00)        |                   |
+| **Single-Species**<br>**Test AUC** | **SDDR<br>(Add only)** | **SDDR<br>(DNN only)** | **SDDR<br>(Addit+DNN)** | **GAM**<br>(mgcv) | **XGBoost** | **MaxEnt**<br>(maxnet) | **Bender et al.** |
+|:----------------------------------:|:----------------------:|:----------------------:|:-----------------------:|:-----------------:|:-----------:|------------------------|-------------------|
+|                                    |           (1)          |           (2)          |           (3)           |        (4)        |     (5)     |           (6)          |        (7)        |
+| T. Infestans                       |          0.965         |        **0.977**       |          0.976          |       0.970       |    0.973    |          0.973         |        0.96       |
+|                                    |         (1 e-6)        |         (3 e-3)        |         (2 e-3)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
+| T. Dimidiata                       |          0.925         |          0.960         |          0.962          |       0.963       |  **0.965**  |          0.946         |        0.97       |
+|                                    |         (3 e-3)        |         (2 e-3)        |         (1 e-3)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
+| P. Megistus                        |          0.819         |          0.828         |        **0.830**        |       0.827       |    0.828    |          0.821         |        0.83       |
+|                                    |         (1 e-4)        |         (2 e-3)        |         (2 e-3)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
+| T. Brasiliensis                    |          0.674         |          0.690         |          0.682          |     **0.694**     |    0.640    |          0.666         |        0.69       |
+|                                    |         (1 e-4)        |         (5 e-3)        |         (8 e-3)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
+| T. Sordida                         |          0.827         |          0.838         |          0.830          |       0.826       |  **0.848**  |          0.803         |        0.83       |
+|                                    |         (2 e-3)        |         (5 e-3)        |         (7 e-3)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
+| T. Pseud.                          |          0.692         |          0.724         |          0.709          |       0.725       |    0.716    |        **0.741**       |        0.73       |
+|                                    |         (3 e-3)        |         (4 e-3)        |         (1 e-2)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
+| T. Barberi                         |          0.867         |          0.862         |          0.867          |     **0.873**     |    0.870    |          0.858         |        0.88       |
+|                                    |         (5 e-4)        |         (7 e-3)        |         (1 e-2)         |       (0.00)      |    (0.00)   |         (0.00)         |                   |
 
 
 - **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
