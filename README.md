@@ -126,7 +126,7 @@ This script performs Bayesian Hyperparameter Optimization for all three predicto
 
 This script takes the raw species occurrence and environmental grid data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in `data` folder of pooled-models and multi-species-models), as well as generates spatially decorrelated cross-validation folds using  `blockCV`. Although the raw data is not included, the resulting data set is included in the `data`subfolders of the pooled and multi-species approaches.
 
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/readme-files/full-tune-vs-test.png" alt="drawing" width="300"/>
+<img src="https://github.com/chriskolb/SDDR-Species/blob/master/readme-files/full-tune-vs-test.png" alt="drawing" width="500"/>
 
 
 ## multi-species-models
@@ -146,7 +146,7 @@ Same as for `bayes-hopt-multi-class`, only that the multivariate data are modele
 This script computes the multivariate benchmark model (MMARS: multi-species multivariate adaptive regression splines). Results are contained in folder `multi-species/models/mmars-model`.
 
 
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/readme-files/multi-res-github.png" alt="drawing" width="1000"/>
+<img src="https://github.com/chriskolb/SDDR-Species/blob/master/readme-files/multi-res-github.png" alt="drawing" width="1100"/>
 
 
 
