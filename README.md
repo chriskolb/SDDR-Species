@@ -2,7 +2,7 @@
 
 This repository contains code and data for the analysis of multiple <em>triatomine</em> species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. 
 
-## This is the single-species data:
+## This is the single-species data
 
 The following table describes the constitution of the seven single-species data sets, showing 7,541 unique presence locations of one of the seven modeled species. Due to the target-group background approach, the absences of a species are drawn from the presence location of other species, preferably with similar sampling intensity. There are 3,759 "true" pseudo-absences in the data, i.e. presence locations of an unmodeled species. In total, the data contains 11,300 unique observations. Because presence points of a modeled species can also appear as pseudo-absences in other species data sets, duplicates inflate the total number of instances over all single-species data sets to 30,460. 
 
@@ -21,10 +21,10 @@ The following table describes the constitution of the seven single-species data 
  The following map illustrates the geographical distribution of triatomine vector species occurences, colored by species:
  
  <p align="center">
-<img align="center" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="550"/> 
+<img align="center" src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="500"/> 
  </p>
 
-**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models. Figuring out the right set-up and dependencies to run the code can be tedious.
+**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the repo/code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of `deepregression` than the pooled and multi-species models (hence syntax might differ). Figuring out the right set-up and dependencies to run the code can be tedious.
 
 **Disclaimer 2**: The analysis is not entirely reproducible using only the data and code in this repo, as it relies on some large data could not be included here. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-processes data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
 
@@ -93,6 +93,25 @@ This folder contains the necessary code for the pooled SDDR models. Nested folde
 - **`bayes-hopt-pooled.R`** (runtime: **several days** on LEQR server)
 
 This script performs Bayesian Hyperparameter Optimization for all three predictor types (smooth, deep, smooth+deep). Subsequently, the models are estimated ten times using random initialization of weights to produce the final averaged AUC and Brier score results. The folder `bayesian-optimization-results` contains the resulting `ParBayesianOptimization` hyperparameter objects and the folder `pooled-models/performance-results` the respective AUC and Brier scores. Also runs for several days.
+
+|                |                         |           AUC           |                             |                   |                         |          Brier          |                             |
+|----------------|-------------------------|:-----------------------:|:---------------------------:|:-----------------:|:-----------------------:|:-----------------------:|-----------------------------|
+|                | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) | Bender <br>et al. | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) |
+|                |           (1)           |           (2)           |             (3)             |        (4)        |           (5)           |           (6)           |             (7)             |
+| T. Infestans   |          0.964          |         **0.974         |            0.971            |        0.96       |          0.063          |        **0.060**        |            0.063            |
+|                |         (3 e-4)         |         (4 e-3)         |           (5 e-3)           |                   |         (3 e-4)         |         (6 e-3)         |           (7 e-3)           |
+| T. Dimidiata   |          0.872          |          0.940          |          **0.946**          |        0.97       |          0.104          |          0.072          |          **0.068**          |
+|                |         (3 e-3)         |         (1 e-2)         |           (4 e-3)           |                   |         (7 e-4)         |         (9 e-3)         |           (3 e-3)           |
+| P. Megistus    |          0.813          |        **0.816**        |            0.814            |        0.83       |          0.143          |          0.136          |          **0.134**          |
+|                |         (6 e-5)         |         (6 e-3)         |           (1 e-2)           |                   |         (2 e-5)         |         (5 e-3)         |           (5 e-3)           |
+| T.Brasiliensis |        **0.672**        |          0.669          |            0.666            |        0.69       |          0.257          |        **0.241**        |            0.247            |
+|                |          (1e-4)         |         (1 e-2)         |           (1 e-2)           |                   |         (2 e-4)         |         (1 e-2)         |           (6 e-3)           |
+| T. Sordida     |          0.836          |          0.822          |          **0.846**          |        0.83       |        **0.117**        |          0.147          |            0.139            |
+|                |         (2 e-5)         |         (1 e-2)         |           (5 e-3)           |                   |         (2 e-5)         |         (8 e-3)         |           (4 e-3)           |
+| T. Pseudom.    |          0.674          |        **0.702**        |            0.670            |        0.73       |          0.301          |        **0.239**        |            0.265            |
+|                |         (2 e-4)         |         (1 e-2)         |           (7 e-3)           |                   |         (1 e-4)         |         (1 e-2)         |           (3 e-3)           |
+| T.Barberi      |        **0.868**        |          0.850          |            0.838            |        0.88       |        **0.059**        |          0.067          |            0.063            |
+|                |         (2 e-4)         |         (8 e-3)         |           (9 e-3)           |                   |         (4 e-5)         |         (5 e-3)         |           (2 e-3)           |
 
 - **`full-model-datagen.R`** (runtime: **several minutes** on LEQR server)
 
