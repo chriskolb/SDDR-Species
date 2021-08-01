@@ -18,7 +18,7 @@ The following table describes the constitution of the seven single-species data 
  Sum                         | 7,541               | 22,919              | 30,460  
  
  
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="440"/> 
+<img src="https://github.com/chriskolb/SDDR-Species/blob/master/single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="540"/> 
  
  
 
