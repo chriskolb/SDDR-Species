@@ -93,25 +93,24 @@ This folder contains the necessary code for the pooled SDDR models. Nested folde
 - **`bayes-hopt-pooled.R`** (runtime: **several days** on LEQR server)
 
 This script performs Bayesian Hyperparameter Optimization for all three predictor types (smooth, deep, smooth+deep). Subsequently, the models are estimated ten times using random initialization of weights to produce the final averaged AUC and Brier score results. The folder `bayesian-optimization-results` contains the resulting `ParBayesianOptimization` hyperparameter objects and the folder `pooled-models/performance-results` the respective AUC and Brier scores. Also runs for several days.
-
-|                |                         |           AUC           |                             |                   |                         |          Brier          |                             |
-|----------------|-------------------------|:-----------------------:|:---------------------------:|:-----------------:|:-----------------------:|:-----------------------:|-----------------------------|
-|                | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) | Bender <br>et al. | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) |
-|                |           (1)           |           (2)           |             (3)             |        (4)        |           (5)           |           (6)           |             (7)             |
-| T. Infestans   |          0.964          |         **0.974         |            0.971            |        0.96       |          0.063          |        **0.060**        |            0.063            |
-|                |         (3 e-4)         |         (4 e-3)         |           (5 e-3)           |                   |         (3 e-4)         |         (6 e-3)         |           (7 e-3)           |
-| T. Dimidiata   |          0.872          |          0.940          |          **0.946**          |        0.97       |          0.104          |          0.072          |          **0.068**          |
-|                |         (3 e-3)         |         (1 e-2)         |           (4 e-3)           |                   |         (7 e-4)         |         (9 e-3)         |           (3 e-3)           |
-| P. Megistus    |          0.813          |        **0.816**        |            0.814            |        0.83       |          0.143          |          0.136          |          **0.134**          |
-|                |         (6 e-5)         |         (6 e-3)         |           (1 e-2)           |                   |         (2 e-5)         |         (5 e-3)         |           (5 e-3)           |
-| T.Brasiliensis |        **0.672**        |          0.669          |            0.666            |        0.69       |          0.257          |        **0.241**        |            0.247            |
-|                |          (1e-4)         |         (1 e-2)         |           (1 e-2)           |                   |         (2 e-4)         |         (1 e-2)         |           (6 e-3)           |
-| T. Sordida     |          0.836          |          0.822          |          **0.846**          |        0.83       |        **0.117**        |          0.147          |            0.139            |
-|                |         (2 e-5)         |         (1 e-2)         |           (5 e-3)           |                   |         (2 e-5)         |         (8 e-3)         |           (4 e-3)           |
-| T. Pseudom.    |          0.674          |        **0.702**        |            0.670            |        0.73       |          0.301          |        **0.239**        |            0.265            |
-|                |         (2 e-4)         |         (1 e-2)         |           (7 e-3)           |                   |         (1 e-4)         |         (1 e-2)         |           (3 e-3)           |
-| T.Barberi      |        **0.868**        |          0.850          |            0.838            |        0.88       |        **0.059**        |          0.067          |            0.063            |
-|                |         (2 e-4)         |         (8 e-3)         |           (9 e-3)           |                   |         (4 e-5)         |         (5 e-3)         |           (2 e-3)           |
+|                           |                         |           AUC           |                             |                   |                         |          Brier          |                             |
+|---------------------------|-------------------------|:-----------------------:|:---------------------------:|:-----------------:|:-----------------------:|:-----------------------:|-----------------------------|
+| Pooled SDM<br>AUC + Brier | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) | Bender <br>et al. | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) |
+|                           |           (1)           |           (2)           |             (3)             |        (4)        |           (5)           |           (6)           |             (7)             |
+| T. Infestans              |          0.964          |         **0.974         |            0.971            |        0.96       |          0.063          |        **0.060**        |            0.063            |
+|                           |         (3 e-4)         |         (4 e-3)         |           (5 e-3)           |                   |         (3 e-4)         |         (6 e-3)         |           (7 e-3)           |
+| T. Dimidiata              |          0.872          |          0.940          |          **0.946**          |        0.97       |          0.104          |          0.072          |          **0.068**          |
+|                           |         (3 e-3)         |         (1 e-2)         |           (4 e-3)           |                   |         (7 e-4)         |         (9 e-3)         |           (3 e-3)           |
+| P. Megistus               |          0.813          |        **0.816**        |            0.814            |        0.83       |          0.143          |          0.136          |          **0.134**          |
+|                           |         (6 e-5)         |         (6 e-3)         |           (1 e-2)           |                   |         (2 e-5)         |         (5 e-3)         |           (5 e-3)           |
+| T.Brasiliensis            |        **0.672**        |          0.669          |            0.666            |        0.69       |          0.257          |        **0.241**        |            0.247            |
+|                           |          (1e-4)         |         (1 e-2)         |           (1 e-2)           |                   |         (2 e-4)         |         (1 e-2)         |           (6 e-3)           |
+| T. Sordida                |          0.836          |          0.822          |          **0.846**          |        0.83       |        **0.117**        |          0.147          |            0.139            |
+|                           |         (2 e-5)         |         (1 e-2)         |           (5 e-3)           |                   |         (2 e-5)         |         (8 e-3)         |           (4 e-3)           |
+| T. Pseudom.               |          0.674          |        **0.702**        |            0.670            |        0.73       |          0.301          |        **0.239**        |            0.265            |
+|                           |         (2 e-4)         |         (1 e-2)         |           (7 e-3)           |                   |         (1 e-4)         |         (1 e-2)         |           (3 e-3)           |
+| T.Barberi                 |        **0.868**        |          0.850          |            0.838            |        0.88       |        **0.059**        |          0.067          |            0.063            |
+|                           |         (2 e-4)         |         (8 e-3)         |           (9 e-3)           |                   |         (4 e-5)         |         (5 e-3)         |           (2 e-3)           |
 
 - **`full-model-datagen.R`** (runtime: **several minutes** on LEQR server)
 
