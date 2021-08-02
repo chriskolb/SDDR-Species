@@ -1,12 +1,18 @@
 # Deep Semi-Structured Species Distribution Modeling 
 
-## Description of Repository - Species Distribution Modeling of vector species for <em>American Trypanosomiasis</em> using SDDR
+## Description of Repository - Species Distribution Modeling of Vector Species for <em>American Trypanosomiasis</em> using Semi-Structured Deep Distributional Regression
 
-This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) species in South and Middle America that act as vector species for <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included further down). The three main folders for the general SDDR (single-species, pooled, multi-species) variants are self-contained and function independently, each endowed with their own **`deepregression`** repo folder and the variant-specific data set(s). The scripts themselves call further auxiliary scripts for data pre-processing and the compiling the model formulas. Making use of the packages **`deepregression`** and **`mastergrids`** contained in the repo folders, the scripts take the data sets in the data folder as input and save output to an empty "temp" folder. Pre-computed results are already included in the locations indicated by the diagram below.
+This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) species in South and Middle America that act as vector species for <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included further down). The three main folders for the general SDDR (single-species, pooled, multi-species) variants are self-contained and function independently, each endowed with their own **`deepregression`** repo folder and the variant-specific data set(s). The scripts themselves call further auxiliary scripts for data pre-processing and the compiling the model formulas. Making use of the packages **`deepregression`** and **`mastergrids`** contained in the repo folders, the scripts take the data sets in the respective data folder as input, and after ending save their output to an empty "temp" folder. Pre-computed results are already included in the folders indicated by the diagram below.
 
 <p align="center">
 <img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1300"/> 
 </p>
+
+
+\
+**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named `repo`. Note that the code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies for **`deepregression`**. Figuring out the right set-up and dependencies to run the code might be tedious. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Those will be loaded automatically using the `pacman` package at the beginning of each script. Further note that the single-species models use a different version/iteration of **`deepregression`** than the pooled and multi-species models, meaning that **`deepregression`** syntax is not consistent throughout all code in this repository. 
+
+**Disclaimer 2**: The analysis is not entirely reproducible using only the data contained in this repository. Scripts that cannot be run without the data missing in `data/raw-data` are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-processes data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
 
 ## This is the Data
 
@@ -33,11 +39,6 @@ The following table describes the make-up of the seven single-species data sets,
 <img align="center" src="single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="500"/> 
 </p>
 
-
-\
-**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. They will be loaded automatically using the `pacman` package in the beginning of each script. Further note that the single-species models use another version of **`deepregression`** than the pooled and multi-species models, meaning that **`deepregression`** syntax is not consistent throughout the repo. Figuring out the right set-up and dependencies to run the code might be tedious.
-
-**Disclaimer 2**: The analysis is not entirely reproducible using only the data contained in this repo. Scripts that cannot be run without the data missing in `data/raw-data` are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-processes data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
 
 # Folder structure
 Overview of project files and folders:
@@ -158,7 +159,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 
 # Exemplary Set-Up
 
-This section describes the exact set-up used to run the exemplary single-species script **`performance-results-single-species.R`** on the HU LEQR server Galton using **`R`** version 4.0.3. This was the first time that specific server was accessed by me, which means that no prior changes were made and no other **`R`** packages were installed beforehand, i.e. if the following does not work the problem is perhaps on the side of your operating system or **`R`** installation/dependencies.
+This section describes the exact set-up used to run the (arbitrarily chosen) single-species script **`performance-results-single-species.R`** on the HU LEQR Windows server Galton using **`R`** version 4.0.3. Note that the set-up requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**. This was the first time that specific server was accessed by my account, ensuring a clean set-up and no other **`R`** packages were installed beforehand. In case the following does not work, consider if the problem could be on the side of your OS, Anaconda/**`R`** installation/dependencies, or caused by incompatibility issues. Then alternative installations could be better suited, e.g. trying `tensorflow::install_tensorflow(version="2.0.0")` and `tfprobability::install_tfprobability(version="0.8.0")` after setting up the conda environment `r-reticulate`.
 
 1. Prior to running any code, make sure the **`R`** packages `devtools`, `rstudioapi`, `pacman`, `Rcpp` and `reticulate` are installed and loaded.
 2. Install Miniconda using `reticulate::install_miniconda()`in the **`R`** console, which automatically creates a conda environment called `r-reticulate`
