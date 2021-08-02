@@ -6,7 +6,7 @@ This repository contains code and data for the analysis of multiple <em>triatomi
 
 
 <p align="center">
-<img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1000"/> 
+<img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1200"/> 
 </p>
 
 ## This is the Data
