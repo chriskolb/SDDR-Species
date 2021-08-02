@@ -1,6 +1,6 @@
-# Species Distribution Modeling of vector species for <em>American Trypanosomiasis</em> using Semi-Structured Deep Distributional Regression
+# Deep Semi-Structured Species Distribution Modeling 
 
-## Description of Repository
+## Description of Repository - Species Distribution Modeling of vector species for <em>American Trypanosomiasis</em> using SDDR
 
 This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) species in South and Middle America that act as vector species for <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included further down). The three main folders for the general SDDR (single-species, pooled, multi-species) variants are self-contained and function independently, each endowed with their own **`deepregression`** repo folder and the variant-specific data set(s). The scripts themselves call further auxiliary scripts for data pre-processing and the compiling the model formulas. Making use of the packages **`deepregression`** and **`mastergrids`** contained in the repo folders, the scripts take the data sets in the data folder as input and save output to an empty "temp" folder. Pre-computed results are already included in the locations indicated by the diagram below.
 
