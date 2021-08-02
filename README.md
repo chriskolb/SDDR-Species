@@ -1,11 +1,12 @@
 # Species Distribution Modeling of vector species for <em>American Trypanosomiasis</em> using Semi-Structured Deep Distributional Regression
 
-This repository contains code and data for the analysis of multiple <em>triatomine</em> species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. 
-
 ## Description of Repository
 
+This repository contains code and data for the analysis of multiple <em>triatomine</em> species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. 
+
+
 <p align="center">
-<img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="900"/> 
+<img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1000"/> 
 </p>
 
 ## This is the Data
