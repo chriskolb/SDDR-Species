@@ -2,16 +2,16 @@
 
 ## Description of Repository
 
-This repository contains code and data for the analysis of multiple <em>triatomine</em> species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. 
+This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included later). The three main folders for the general SDDR (single-species, pooled, multi-species) variants are self-contained and function independently, each endowed with their own `**deepregression**` repo folder and the variant-specific data set(s). The scripts themselves call further auxiliary scripts for data pre-processing and the compiling the model formulas. Making use of the packages `**deepregression**` and `**mastergrids**` contained in the repo folders, the scripts take the data sets in the data folder as input and save output to an empty "temp" folder. Pre-computed results are already included in the folders indicated by the diagram below.
 
 
 <p align="center">
-<img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1200"/> 
+<img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1300"/> 
 </p>
 
 ## This is the Data
 
-The following table describes the make-up of the seven single-species data sets, showing 7,541 unique presence locations of one of the seven modeled species. Due to the target-group background approach, the absences of a species are drawn from the presence location of other species, preferably with similar sampling intensity. There are 3,759 "true" pseudo-absences in the data, i.e. presence locations of an unmodeled species. In total, the data contains 11,300 unique observations. Because presence points of a modeled species can also appear as pseudo-absences in other species data sets, duplicates inflate the total number of instances over all single-species data sets to 30,460. 
+The following table describes the make-up of the seven single-species data sets, showing 7,541 unique presence locations of the seven modeled species. Due to utlizing the target-group background approach, the pseudo-absences for a species are drawn from the presence locations of other species, preferably with similar sampling effort. There are 3,759 "pure" pseudo-absences in the data, i.e. presence locations of unmodeled species. In total, the data contains 11,300 unique observations. Because presence points of one modeled species can also appear as pseudo-absences in another species' data set, duplicates inflate the total number of instances over all single-species data sets to 30,460. 
 
 <center>
 
