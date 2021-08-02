@@ -2,8 +2,7 @@
 
 ## Description of Repository
 
-This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included later). The three main folders for the general SDDR (single-species, pooled, multi-species) variants are self-contained and function independently, each endowed with their own `**deepregression**` repo folder and the variant-specific data set(s). The scripts themselves call further auxiliary scripts for data pre-processing and the compiling the model formulas. Making use of the packages `**deepregression**` and `**mastergrids**` contained in the repo folders, the scripts take the data sets in the data folder as input and save output to an empty "temp" folder. Pre-computed results are already included in the folders indicated by the diagram below.
-
+This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) species in South and Middle America that act as vector species for the parasitic protozoan <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em> or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included later). The three main folders for the general SDDR (single-species, pooled, multi-species) variants are self-contained and function independently, each endowed with their own **`deepregression`** repo folder and the variant-specific data set(s). The scripts themselves call further auxiliary scripts for data pre-processing and the compiling the model formulas. Making use of the packages **`deepregression`** and **`mastergrids`** contained in the repo folders, the scripts take the data sets in the data folder as input and save output to an empty "temp" folder. Pre-computed results are already included in the locations indicated by the diagram below.
 
 <p align="center">
 <img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1300"/> 
@@ -11,7 +10,7 @@ This repository contains code and data for the analysis of multiple triatomine (
 
 ## This is the Data
 
-The following table describes the make-up of the seven single-species data sets, showing 7,541 unique presence locations of the seven modeled species. Due to utlizing the target-group background approach, the pseudo-absences for a species are drawn from the presence locations of other species, preferably with similar sampling effort. There are 3,759 "pure" pseudo-absences in the data, i.e. presence locations of unmodeled species. In total, the data contains 11,300 unique observations. Because presence points of one modeled species can also appear as pseudo-absences in another species' data set, duplicates inflate the total number of instances over all single-species data sets to 30,460. 
+The following table describes the make-up of the seven single-species data sets, comprising 7,541 unique presence locations of the seven modeled species. Due to utlizing the target-group background approach, the pseudo-absences for a species are drawn from the presence locations of other species, preferably with similar sampling effort. There are 3,759 "pure" pseudo-absences in the data, i.e. presence locations of unmodeled species. In total, the data contains 11,300 unique observations. Because presence points of one modeled species can also appear as pseudo-absences in another species' data set, duplicates inflate the total number of instances over all single-species data sets to 30,460. 
 
 <center>
 
@@ -28,7 +27,7 @@ The following table describes the make-up of the seven single-species data sets,
  
  </center>
  
- The following map illustrates the geographical distribution of triatomine vector species occurences throughout Middle and South America, colored by species:
+ This map shows the geographical distribution of triatomine vector sightings throughout Middle and South America, colored by species:
  
 <p align="left">
 <img align="center" src="single-species-models/plot-results/sdm-plots/deep/overview.png" alt="drawing" width="500"/> 
@@ -36,16 +35,16 @@ The following table describes the make-up of the seven single-species data sets,
 
 
 \
-**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Further note that the single-species models use another version of **`deepregression`** than the pooled and multi-species models, meaning that **`deepregression`** syntax is not consistent throughout the repo. Figuring out the right set-up and dependencies to run the code can be tedious.
+**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named "repo". Note that the code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. They will be loaded automatically using the `pacman` package in the beginning of each script. Further note that the single-species models use another version of **`deepregression`** than the pooled and multi-species models, meaning that **`deepregression`** syntax is not consistent throughout the repo. Figuring out the right set-up and dependencies to run the code might be tedious.
 
-**Disclaimer 2**: The analysis is not entirely reproducible using only the data and code in this repo, as it relies on some large data could not be included here. Scripts that cannot be run are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-processes data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
+**Disclaimer 2**: The analysis is not entirely reproducible using only the data contained in this repo. Scripts that cannot be run without the data missing in `data/raw-data` are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-processes data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big) and will thus not be partly computable. 
 
 # Folder structure
 Overview of project files and folders:
 
 ## single-species-models
 
-This folder contains the necessary code for the single-species SDDR models, plots, as well as the comparison benchmarks. Nested folders contain the necessary `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization hyperparameters, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts following below.
+This folder contains the necessary code for the single-species SDDR models and comparison benchmarks. Nested folders contain the `deepregression` repo, the single-species data sets, the pre-computed Bayesian Optimization hyperparameters, auxiliary scripts for data pre-processing and the model formulas, as well as the pre-computed output of the scripts following below.
 
 - **`performance-results-single-species.R`**  (runtime: **some hours** on LEQR server)
 
@@ -377,7 +376,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 
 This section describes the exact set-up used to run the exemplary single-species script **`performance-results-single-species.R`** on the HU LEQR server Galton using **`R`** version 4.0.3. This was the first time that specific server was accessed by me, which means that no prior changes were made and no other **`R`** packages were installed beforehand, i.e. if the following does not work the problem is perhaps on the side of your operating system or **`R`** installation/dependencies.
 
-1. Prior to running any code, make sure the **`R`** packages `devtools`, `rstudioapi`, `pacman`, `Rcpp` and `reticulate` are installed.
+1. Prior to running any code, make sure the **`R`** packages `devtools`, `rstudioapi`, `pacman`, `Rcpp` and `reticulate` are installed and loaded.
 2. Install Miniconda using `reticulate::install_miniconda()`in the **`R`** console, which automatically creates a conda environment called `r-reticulate`
 3. For `deepregression` to work properly, you have to install the appropriate dependencies in `r-reticulate`. To do so, open the Anaconda (Miniconda) prompt and run
 ```
