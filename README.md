@@ -134,8 +134,6 @@ This script performs Bayesian Hyperparameter Optimization for all three predicto
 
 This script takes the raw species occurrence and environmental grid data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in `data` folder of pooled-models and multi-species-models), as well as generates spatially decorrelated cross-validation folds using `blockCV`. Although the raw data is not included, the resulting data set is included in the `data` subfolders of the pooled and multi-species SDDR variants.
 
-<img src="https://github.com/chriskolb/SDDR-Species/blob/master/readme-files/full-tune-vs-test.png" alt="drawing" width="400"/>
-
 
 ## multi-species-models
 
