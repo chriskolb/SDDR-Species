@@ -3,7 +3,7 @@
 ## Description of Code Repository 
 ### Species Distribution Modeling of Vector Species for <em>American Trypanosomiasis</em> using Semi-Structured Deep Distributional Regression
 
-This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) insects in South and Middle America that act as vector species for <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em>, or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included further down). The three main folders for the general SDDR variants (single-species, pooled, multi-species) are self-contained and function independently, each endowed with their own **`deepregression`** repo folder and the variant-specific data set(s). The scripts themselves sometimes call further auxiliary scripts for data pre-processing and piecing together the model formulas. Making use of the packages **`deepregression`** and **`mastergrids`** contained in the repo folders, the scripts take the data in the respective data folder as input, and after running their code, save their output to an empty "temp" folder. Pre-computed output (ready-to-watch results such as plots or AUC/Brier scores) are already included in the folders indicated by the diagram below.
+This repository contains code and data for the analysis of multiple triatomine (e.g., kissing bugs) insects in South and Middle America that act as vector species for <em>Trypanosoma cruzi</em>, a pathogen responsible for one of the most burdensome neglected tropical diseases, <em>American Trypanosomiasis</em>, or Chagas disease. The diagram below shows the coarse structure of this repository (a more detailed structure is included further down). The main folders for the three SDDR variants (single-species, pooled, multi-species) are self-contained and function independently, each endowed with their own **`deepregression`** repo folder and the variant-specific data set(s). The scripts themselves sometimes call further auxiliary scripts for data pre-processing and piecing together the model formulas. The scripts take the data in the respective data folder as input, and after running the code, save their output to an empty "temp" folder. Pre-computed outputs (ready-to-watch results such as plots or AUC/Brier scores) are already included in the folders indicated by the diagram below.
 
 <p align="center">
 <img align="center" src="readme-files/sddr-species-structure.png" alt="drawing" width="1300"/> 
@@ -11,11 +11,11 @@ This repository contains code and data for the analysis of multiple triatomine (
 
 
 \
-**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named `repo`. Note that the code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies for **`deepregression`**. Figuring out the right set-up and dependencies to run the code might be tedious. See the README files in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. Those will be loaded automatically using the `pacman` package at the beginning of each script. Further note that the single-species models use a different version/iteration of **`deepregression`** than the pooled and multi-species models, meaning that **`deepregression`** syntax is not consistent throughout all code in this repository. 
+**Disclaimer 1**: The analysis requires deprecated versions of the **`R`** package **`deepregression`**, which are supplied in the folders named `repo`. Note that the code requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**, as well as various **`R`** dependencies for **`deepregression`**. Figuring out the right set-up and dependencies to run the code can be tedious. See the README file in the `deepregression-master` folder within `repo` for details on the **`R`** dependencies. These will be loaded automatically using the `pacman` package at the beginning of each script. Further note that the single-species models use a different version of **`deepregression`** than the pooled and multi-species models, meaning that **`deepregression`** syntax is not consistent throughout all code in this repository. 
 
-Reproducibility is considerably complicated by **`deepregression`**'s elaborate system of dependencies and computational layers, using `tensorflow` via `reticulate` as its backbone. This means that for the code to run smoothly, many different packages in different environment need to be compatible in their version. Moreover, frequent updates of the **`deepregression`** package itself throghout the thesis exacerbated this instability. To combat this, I include the outdated **`deepregression`** packages, as well as detailed instructions for setting up the dependencies corectly.
+Reproducibility is considerably complicated by **`deepregression`**'s elaborate system of dependencies and computational layers, using `tensorflow` via `reticulate` as its backbone. This means that for the code to run smoothly, many different packages in different environments need to be compatible in their version. Moreover, frequent updates of the **`deepregression`** package itself throghout the timeline of the thesis exacerbated this instability. To combat this, I include the outdated **`deepregression`** packages, as well as detailed instructions for setting up the dependencies corectly.
 
-**Disclaimer 2**: The analysis is not entirely reproducible using only the data contained in this repository. Scripts that cannot be run without the data missing in `data/raw-data` are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-generated data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). Both scripts require the raw environmental grid data (too big for this repo) and will thus only be partly computable. The full data are included on the USB sticks at Humboldt Uni, or I can send them to you via dropbox such that you can add them to both folders `single-species-models/data/raw-data`and `pooled-models/data/raw-data`. Subsequently, also **`plots-single-species.R`** and **`full-model-datagen.R`** can be run. 
+**Disclaimer 2**: The analysis is not entirely reproducible using only the data contained in this repository. Scripts that cannot be run without the data missing in `data/raw-data` are **`plots-single-species.R`** for the single-species predictive distribution maps (pre-computed plots are included in `single-species-models/plot-results/sdm-plots`) and **`full-model-datagen.R`** (pre-generated data set `full-model-list.Rds` is contained in `pooled-models/data` and `multi-species-models/data`). The full data are included on the USB sticks submitted to Humboldt Uni, or I sent them to you via dropbox such that you can add them to both folders `single-species-models/data/raw-data`and `pooled-models/data/raw-data`. Subsequently, also **`plots-single-species.R`** and **`full-model-datagen.R`** can be run. 
 
 ## This is the Data
 
@@ -78,18 +78,18 @@ This script produces the univariate benchmark results (`mgcv` GAM, XGBoost and M
 
 - **`effect-curves-single-species.R`** (runtime: **some hours** on LEQR server)
 
-This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). The plots show three models: The output can be found in folder `single-species-models/plot-results/partial-effects`.
+This script produces the partial effect curves of the optimized models for the species <em>Panstrongylus megistus</em> (another species can simply be specified at the beginning). The plots show three models: The pre-computed output can be found in folder `single-species-models/plot-results/partial-effects`.
 
 <p float="center">
   <img src="single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-urban.png" width="400" />
   <img src="single-species-models/plot-results/partial-effects/pmegistus/effect-curves-pmeg-population.png" width="400" /> 
 </p>
 
-The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only structured smooth effect terms, and an SDDR model (2) with both structured and and a DNN effect. The data set is the single-species data set for the vector species *Panstrongylus megistus*.
+The figure above displays the learned effect curves for a `mgcv`GAM, an SDDR model (1) with only structured smooth effect terms, and an SDDR model (2) with both structured and and a DNN effect.
 
 - **`plots-single-species.R`** (runtime: **several hours** on LEQR server)
 
-This script produces the predictive distribution maps for the modeled vector species obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data not included here. Output of the script can be found in `single-species-models/plot-results/sdm-plots`.
+This script produces the predictive distribution maps for the modeled vector species obtained by SDDR (DNN-only predictor type). This **script cannot be run** without the environmental grid data, which is not included here. Pre-computed output of the script can be found in `single-species-models/plot-results/sdm-plots`.
 
 <img src="single-species-models/plot-results/sdm-plots/deep/tinf-deep-mgcv.png" alt="drawing" width="800"/>
 
@@ -99,7 +99,7 @@ The figure above shows predictive distribution maps for the vector species *Tria
 
 This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types in the single-species setting. Subsequently, the optimized models are randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results **(runs for 7+ days!)**. Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. **Results will thus differ**. 
 
-To re-run the single-species AUC and Brier results appropriately with the pre-computed `ParBayesianOptimization` objects (same as results in thesis), **`performance-results-single-species.R`** should be used! The script **`bayes-hopt-single.R`** is actually not directly used in any of the thesis' analasyses and is included here mainly because it is the complementary single-species version to the scripts **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models`. I only started using consolidated large scripts looping over species and predictor types after already having obtained the single-species model results. 
+To re-run the single-species AUC and Brier results in the thesis, the script **`performance-results-single-species.R`** utilizing pre-computed `ParBayesianOptimization` objects  should be used! The script **`bayes-hopt-single.R`** is actually not directly used in any of the thesis' analasyses and is included here mainly because it is the complementary single-species version to the scripts **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models`. I only started using consolidated large scripts looping over species and predictor types after already having obtained the single-species model results. 
 
 ## pooled-models 
 
@@ -115,7 +115,7 @@ This script performs Bayesian Hyperparameter Optimization for all three predicto
 |----------------------------------|-------------------------|:-----------------------:|:---------------------------:|:-----------------:|:-----------------------:|:-----------------------:|-----------------------------|
 | Pooled SDM<br>Test <br>AUC+Brier | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) | Bender <br>et al. | Pooled<br>SDDR<br>(Add) | Pooled<br>SDDR<br>(DNN) | Pooled<br>SDDR<br>(Add+DNN) |
 |                                  |           (1)           |           (2)           |             (3)             |        (4)        |           (5)           |           (6)           |             (7)             |
-| T. Infestans                     |          0.964          |         **0.974         |            0.971            |        0.96       |          0.063          |        **0.060**        |            0.063            |
+| T. Infestans                     |          0.964          |         **0.974**         |            0.971            |        0.96       |          0.063          |        **0.060**        |            0.063            |
 |                                  |         (3 e-4)         |         (4 e-3)         |           (5 e-3)           |                   |         (3 e-4)         |         (6 e-3)         |           (7 e-3)           |
 | T. Dimidiata                     |          0.872          |          0.940          |          **0.946**          |        0.97       |          0.104          |          0.072          |          **0.068**          |
 |                                  |         (3 e-3)         |         (1 e-2)         |           (4 e-3)           |                   |         (7 e-4)         |         (9 e-3)         |           (3 e-3)           |
@@ -134,7 +134,7 @@ This script performs Bayesian Hyperparameter Optimization for all three predicto
 
 - **`full-model-datagen.R`** (runtime: **several minutes** on LEQR server)
 
-This script takes the raw species occurrence and environmental grid data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in `data` folder of pooled-models and multi-species-models), as well as generates spatially decorrelated cross-validation folds using `blockCV`. Although the raw data is not included, the resulting data set is included in the `data` subfolders of the pooled and multi-species SDDR variants.
+This script takes the raw species occurrence and environmental grid data (**not included here**) and produces the pooled and multivariate data sets (`full-model-list.Rds` in `data` folder of pooled-models and multi-species-models). It also generates spatially decorrelated cross-validation folds using `blockCV`. The pre-computed resulting data set is included in the `data` subfolders of the pooled and multi-species SDDR variants.
 
 
 ## multi-species-models
@@ -143,7 +143,7 @@ This folder contains the necessary code for the multi-species SDDR approaches. N
 
 - **`bayes-hopt-multi-class.R`** (runtime: **several days** on LEQR server)
 
-This script performs Bayesian Hyperparameter Optimization for all three predictor types in the multi-class modeling approach using a Multinoulli distribution to model the vector-valued response, with a distinct class for each element in the label powerset of the response labels. Subsequently, the models are estimated ten times to produce the final results. The folder `multi-class-model` contains the resulting `ParBayesianOptimization` objects and performance metrics (AUC and Brier score). Also runs for several days.
+This script performs Bayesian Hyperparameter Optimization for all three predictor types in the multi-class modeling approach using a Multinoulli distribution to model the vector-valued response, with a distinct class for each element in the label powerset of the response labels. Subsequently, the models are estimated ten times to produce the final averaged results. The folder `multi-class-model` contains the resulting `ParBayesianOptimization` objects and performance metrics (AUC and Brier score). Also runs for several days.
 
 - **`bayes-hopt-multivariate.R`** (runtime: **several days** on LEQR server)
 
@@ -176,7 +176,7 @@ This script computes the multivariate benchmark model (MMARS: multi-species mult
 
 # Exemplary Set-Up
 
-This section describes the exact set-up used to run the (arbitrarily chosen) single-species script **`performance-results-single-species.R`** on the HU LEQR Windows server Galton using **`R`** version 4.0.3. Note that the set-up requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**. This was the first time that specific server was accessed by my account, ensuring a clean set-up and no other **`R`** packages were installed beforehand. In case the following does not work, consider if the problem could be on the side of your OS, Anaconda/**`R`** installation/dependencies, or caused by incompatibility issues. Then alternative installations could be better suited, e.g. trying `tensorflow::install_tensorflow(version="2.0.0")` and `tfprobability::install_tfprobability(version="0.8.0")` after setting up the conda environment `r-reticulate`.
+This section describes the exact set-up used to run the (arbitrarily chosen) single-species script **`performance-results-single-species.R`** on the HU LEQR Windows server Galton using **`R`** version 4.0.3. Note that the set-up requires **`python`** (3.7.10), **`tensorflow`** (2.0.0) and **`tensorflow_probability`** (0.8.0) installed in a conda environment named **`r-reticulate`**. This was the first time that specific server was accessed by me, thereby ensuring a clean set-up and that no other **`R`** packages were installed beforehand. (In case the following does not work, consider if the problem could be on the side of your OS, Anaconda/**`R`** installation/dependencies, or caused by incompatibility issues. In this case, alternative installation routes could be better suited, e.g. trying `tensorflow::install_tensorflow(version="2.0.0")` and `tfprobability::install_tfprobability(version="0.8.0")` after setting up the conda environment `r-reticulate`.)
 
 1. Prior to running any code, make sure the **`R`** packages `devtools`, `rstudioapi`, `pacman`, `Rcpp` and `reticulate` are installed and loaded.
 2. Install Miniconda using `reticulate::install_miniconda()`in the **`R`** console, which automatically creates a conda environment called `r-reticulate`
@@ -193,7 +193,7 @@ conda deactivate
 5. run the first few lines until the `pacman::p_load()` command loading the required dependencies for `deepregression` (I did not install from sources the packages which need compilation). This might take some minutes.
 6. force `reticulate` to attach to the conda environment `r-reticulate` using `use_condaenv("r-reticulate", required = T)`
 7. load the deepregression package using `devtools::load_all(repo.path)`
-8. the remainder of the script is a nested loop over all (7) species and all (3) predictor types, with each iteration training the optimized model for each species x predictor combination several times and averaging the final performance metrics (AUC and Brier score). The loop can be run in whole (runs for several hours!).
+8. the remainder of the script is a nested loop over all (7) species and all (3) predictor types, with each iteration training the optimized model for one (species x predictor) combination ten times and averaging the final performance metrics (AUC and Brier score). The loop can be run in whole (runs for several hours!).
 
 ## Session Info (might help in case of problems with correct set-up)
 
