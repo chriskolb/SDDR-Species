@@ -96,11 +96,7 @@ The figure above shows predictive distribution maps for the vector species *Tria
 
 - [**`bayes-hopt-single.R`** (runtime: **1-2 weeks** on LEQR server)]
 
-This script performs Bayesian Hyperparameter Optimization using Gaussian processes as a surrogate model for all 7 species and 3 predictor types in the single-species setting. Subsequently, the optimized models are randomly initialized and trained ten times (for each species x predictor combination) to produce the final averaged performance results **(runs for 7+ days!)**. Note that the hyperparameter ranges in this script are more general than the bounds used for the single-species models in the thesis, e.g., allowing for more than one hidden layer. **Results will thus differ**. 
-
-To re-run the single-species AUC and Brier results in the thesis, the script **`performance-results-single-species.R`** utilizing pre-computed `ParBayesianOptimization` objects  should be used! The script **`bayes-hopt-single.R`** is actually not directly used in any of the thesis' analasyses and is included here mainly because it is the complementary single-species version to the scripts **`bayes-hopt-pooled.R`** in `pooled models`, or **`bayes-hopt-multivariate.R`** and **`bayes-hopt-multi-class.R`**  in `multi-species-models`. I only started using consolidated large scripts looping over species and predictor types after already having obtained the single-species model results. 
-
-## pooled-models 
+## pooled-models
 
 This folder contains the necessary code for the pooled SDDR models. Nested folders contain the necessary `deepregression` repo, the pooled data set, Bayesian Optimization results, auxiliary scripts for data pre-processing and the model formulas, and the output of the scripts below.
 
